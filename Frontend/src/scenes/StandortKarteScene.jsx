@@ -1,5 +1,4 @@
 import React from 'react';
-import StandortKartePlain from "../graphComponents/StandortKartePlain";
 import LocationChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 import {Row} from 'react-bootstrap';
@@ -8,6 +7,8 @@ import Col from 'react-bootstrap/Col';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const StandortKarteScene = () => {
+
+    const locationMap = '649efa26-e837-4aa6-8299-ef54e1a17554';
 
     return(
         <Container className="min-vh-100 pb-5" style={{marginTop: 100}}>  
@@ -20,7 +21,7 @@ const StandortKarteScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LocationChartSDK height={'700px'} width={'1300px'} chartId={'649efa26-e837-4aa6-8299-ef54e1a17554'}></LocationChartSDK>
+                    <LocationChartSDK height={'680px'} width={'1250px'} chartId={`${locationMap}`}></LocationChartSDK>
                 </Col>
             </Row>
 

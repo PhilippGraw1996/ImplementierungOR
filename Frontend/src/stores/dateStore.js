@@ -1,5 +1,6 @@
 
 import { makeAutoObservable } from "mobx";
+import { makePersistable } from 'mobx-persist-store'
 
 
 // Model Application State
@@ -13,7 +14,8 @@ class DateStore {
 
         this.startDate = new Date("2019-01-01");
         this.endDate = new Date("2021-12-31");
-        makeAutoObservable(this)
+        makeAutoObservable(this);
+        makePersistable(this, { name: DateStore, properties: [startDate, endDate], storage: window.localStorage})
 
     }
 

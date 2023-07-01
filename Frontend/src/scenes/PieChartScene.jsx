@@ -1,5 +1,4 @@
 import React from 'react';
-import Pie from "../graphComponents/PieChartPlain"
 import PieChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 import {Row} from 'react-bootstrap';
@@ -7,7 +6,6 @@ import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import PieFrame from "../MongoDBChartComponents/Frames/BarChartiFrame";
 
 const PieChartScene = () => {
 
@@ -22,7 +20,7 @@ const PieChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <PieChartSDK height={'700px'} width={'1300px'} chartId={'649dfacb-b269-4702-8689-1fa3130bc4b3'}></PieChartSDK>
+                    <PieChartSDK height={'650px'} width={'1250px'} filter={{"dayOfWeek": {$gte: 3}}} chartId={'649dfacb-b269-4702-8689-1fa3130bc4b3'}></PieChartSDK>
                 </Col>
             </Row>
 
@@ -34,7 +32,7 @@ const PieChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <PieChartSDK height={'700px'} width={'1300px'} chartId={'649dfc19-e5b0-4467-8dd8-c2474b93d45f'}></PieChartSDK>
+                    <PieChartSDK height={'650px'} width={'1250px'} chartId={'649dfc19-e5b0-4467-8dd8-c2474b93d45f'}></PieChartSDK>
                 </Col>
             </Row>
 
@@ -46,7 +44,7 @@ const PieChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <PieChartSDK height={'700px'} width={'1300px'} chartId={'649dfb81-d8a7-4814-883e-650d4f42f0e2'}></PieChartSDK>
+                    <PieChartSDK height={'650px'} width={'1250px'} chartId={'649dfb81-d8a7-4814-883e-650d4f42f0e2'}></PieChartSDK>
                 </Col>
             </Row>
 
