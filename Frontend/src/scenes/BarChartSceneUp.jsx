@@ -1,16 +1,18 @@
-
 import React from 'react';
-import HeatmapSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
+import BarChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 import {Row} from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const HeatMapScene = () => {
+const BarChartSceneUp = () => {
 
-    const heatMapBattryDev = '649fe4be-e837-489b-820b-ef54e14af69d';
-    const speedBarChart = '649dca7a-e837-489e-87e6-ef54e1e1b155';
+    const mainBarChart = '649ff95b-58ae-4c40-8bdf-032013080e3d';
+    const speedBarChart = '649ffca7-84f0-43c9-88d0-a5891ed4b69e';
+    const durationBarChart = '649ff8f0-9232-4eed-8d88-bbf53d85e70a';
+    const batteryDevBarChart = '649ffaab-d0b5-4506-83fb-82e669f4c036';
+    const distanceBarChart = '649ffb79-b269-4cf8-834e-1fa3136611fc';
     
 
     return(
@@ -25,7 +27,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Row>
-                    <HeatmapSDK height={'650px'} width={'1250px'} chartId={`${speedBarChart}`}></HeatmapSDK>
+                    <BarChartSDK height={'650px'} width={'1250px'} chartId={`${mainBarChart}`}></BarChartSDK>
                 </Row>
             </Col>
             <Col style={{marginTop: 30,
@@ -37,7 +39,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Row>
-                    <HeatmapSDK height={'650px'} width={'1250px'} chartId={`${heatMapBattryDev}`}></HeatmapSDK>
+                    <BarChartSDK height={'650px'} width={'1250px'} chartId={`${durationBarChart}`}></BarChartSDK>
                 </Row>
             </Col>
 
@@ -45,4 +47,4 @@ const HeatMapScene = () => {
     );
 }
 
-export default HeatMapScene; 
+export default BarChartSceneUp;

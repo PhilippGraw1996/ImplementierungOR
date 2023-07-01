@@ -35,33 +35,6 @@ const LeftSideBar = () => {
             <div className="row">
                 <div className='col-auto min-vh-100 bg-dark' style={{marginTop: 60, position: "fixed", color: "white"}}>
                     <ul>
-                        <h3>Timespan</h3>
-                            <Form onSubmit={handleSubmit}>
-                                <li>
-                                    <i className='bi-calendar' /> <span className='ms-1 d-none d-sm-inline'>Start Date</span>
-                                </li>
-                                <li style={{marginTop: 3}}>
-                                    <DatePicker
-                                        selected={startDate}
-                                        onChange={(date) => setStartDate(date)}
-                                        placeholderText="Choose Start Date!"
-                                    />
-                                </li>
-                                <li style={{marginTop: 15}}>
-                                    <i className='bi-calendar' /> <span className='ms-1 d-none d-sm-inline'>End Date</span>
-                                </li>
-                                <li style={{marginTop: 3}}>
-                                    <DatePicker
-                                        selected={endDate}
-                                        onChange={(date) => setEndDate(date)}
-                                        placeholderText="Choose End Date!"
-                                    />
-                                </li>
-                                <Button onSubmit={handleSubmit} type="submit" style={{backgroundColor: "#26D477", borderColor: "#26D477", marginTop: 15, marginLeft: 25}}>
-                                    Submit Dates
-                                </Button>
-                            </Form>
-                            <hr></hr>
                         <li>
                             <h3>Main Menu</h3>
                         </li>
@@ -86,7 +59,12 @@ const LeftSideBar = () => {
                             <h3>Detailed analysis</h3>
                         </li>
                         <li>
-                            <a className='nav-link px-2' href='/barChart'>
+                            <a className='nav-link px-2' href='/barChartHorizontal'>
+                                <i className="bi bi-bar-chart-line" /> <span className='ms-1 d-none d-sm-inline'>Barchart horizontal</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a className='nav-link px-2' href='/barChartUp'>
                                 <i className="bi bi-bar-chart-line" /> <span className='ms-1 d-none d-sm-inline'>Barchart</span>
                             </a>
                         </li>

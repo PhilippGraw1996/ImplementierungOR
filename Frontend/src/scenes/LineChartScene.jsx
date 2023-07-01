@@ -1,13 +1,12 @@
 import React from 'react';
 import {useState} from 'react';
 
-import LineChart from "../graphComponents/LineChartPlain"
+import LineChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 import {Form, FormControl, FormGroup, FormLabel, Row} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
-import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 
 
@@ -15,6 +14,10 @@ import lineImage from '../Images/lineTop.jpg';
 
 
 const LineChartScene = () => {
+
+    const mainChart = '649fe3f0-2ac4-41cc-829d-c2e1a94ef2f4';
+    const secondChart = '649fe631-84f0-4aa6-8a7e-a5891ecb6175';
+    const thirdChart = '649fe631-84f0-4aa6-8a7e-a5891ecb6175';
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -85,11 +88,36 @@ const LineChartScene = () => {
                         marginBottom: 100,
                         borderWidth: 1,
                         borderStyle: "solid",
+                        borderRadius: "5px",
                         width: 1300,
                         height: 700
                         }}>
                 <Row>
-                    <LineChart></LineChart>
+                    <LineChartSDK height={'650px'} width={'1250px'} chartId={`${mainChart}`} ></LineChartSDK>
+                </Row>
+            </Col>
+            <Col style={{marginTop: 30,
+                        marginBottom: 100,
+                        borderWidth: 1,
+                        borderStyle: "solid",
+                        borderRadius: "5px",
+                        width: 1300,
+                        height: 700
+                        }}>
+                <Row>
+                    <LineChartSDK height={'650px'} width={'1250px'} chartId={`${secondChart}`}></LineChartSDK>
+                </Row>
+            </Col>
+            <Col style={{marginTop: 30,
+                        marginBottom: 100,
+                        borderWidth: 1,
+                        borderStyle: "solid",
+                        borderRadius: "5px",
+                        width: 1300,
+                        height: 700
+                        }}>
+                <Row>
+                    <LineChartSDK height={'650px'} width={'1250px'} chartId={`${thirdChart}`} ></LineChartSDK>
                 </Row>
             </Col>
 

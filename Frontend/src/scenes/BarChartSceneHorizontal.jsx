@@ -8,11 +8,11 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const BarChartSceneHorizontal = () => {
 
-    const mainBarChart = '649ff95b-58ae-4c40-8bdf-032013080e3d';
-    const speedBarChart = '649ffca7-84f0-43c9-88d0-a5891ed4b69e';
-    const durationBarChart = '649ff8f0-9232-4eed-8d88-bbf53d85e70a';
-    const batteryDevBarChart = '649ffaab-d0b5-4506-83fb-82e669f4c036';
-    const distanceBarChart = '649ffb79-b269-4cf8-834e-1fa3136611fc';
+    const mainBarChart = '649ffd6c-f2f0-4f3e-84a6-11daba20d8f0';
+    const speedBarChart = '649ffecb-2ac4-4671-82d6-c2e1a95a2ed5';
+    const durationBarChart = '649ffd3b-e5b0-405e-8df1-c2474bf3c923';
+    const batteryDevBarChart = '64a00063-e837-4414-8196-ef54e156544f';
+    const distanceBarChart = '649ffdea-b269-4655-89c6-1fa313671302';
     
 
     return(
