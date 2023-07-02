@@ -21,8 +21,9 @@ const BarChartSceneUp = () => {
             <Col style={{marginTop: 30,
                         marginBottom: 100,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        borderRadius: "5px",
+                        borderRadius: 10,
                         width: 1300,
                         height: 700
                         }}>
@@ -33,8 +34,9 @@ const BarChartSceneUp = () => {
             <Col style={{marginTop: 30,
                         marginBottom: 100,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        borderRadius: "5px",
+                        borderRadius: 10,
                         width: 1300,
                         height: 700
                         }}>
