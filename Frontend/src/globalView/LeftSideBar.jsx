@@ -58,6 +58,7 @@ const LeftSideBar = () => {
                         <li>
                             <h3>Detailed analysis</h3>
                         </li>
+                        <h5>Graphs & Charts</h5>
                         <li>
                             <a className='nav-link px-2' href='/barChartHorizontal'>
                                 <i className="bi bi-bar-chart-line" /> <span className='ms-1 d-none d-sm-inline'>Barchart horizontal</span>
@@ -73,6 +74,9 @@ const LeftSideBar = () => {
                                 <i className='bi bi-align-middle' /> <span className='ms-1 d-none d-sm-inline'>Boxplot</span>
                             </a>
                         </li>
+
+                        <hr></hr>
+                        <h5>Location Maps </h5>
                         <li>
                             <a className='nav-link px-2' href='/pieChart'>
                                 <i className='bi-table' /> <span className='ms-1 d-none d-sm-inline'>Piechart</span>
@@ -88,6 +92,9 @@ const LeftSideBar = () => {
                                 <i className="bi bi-geo" /> <span className='ms-1 d-none d-sm-inline'>Location's</span>
                             </a>
                         </li>
+
+                        <hr></hr>
+                        <h5>Scatterplots & Tables</h5>
                         <li>
                             <a className='nav-link px-2' href='/akkordDiagramm'>
                                 <i className='bi-house' /> <span className='ms-1 d-none d-sm-inline'>Akkord Diagramm???</span>
@@ -103,6 +110,9 @@ const LeftSideBar = () => {
                                 <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Parallel Diagramm???</span>
                             </a>
                         </li>
+
+                        <hr></hr>
+                        <h5>Descriptive Statistics</h5>
                         <li>
                             <a className='nav-link px-2' href='/heatmapCrossTab'>
                                 <i className="bi bi-grid-3x3" /> <span className='ms-1 d-none d-sm-inline'>Heatmap table</span>
@@ -116,6 +126,14 @@ const LeftSideBar = () => {
                         <li>
                             <a className='nav-link px-2' href='/areaDiagram'>
                                 <i className='bi-house' /> <span className='ms-1 d-none d-sm-inline'>Area diagram</span>
+                            </a>
+                        </li>
+
+                        <hr></hr>
+
+                        <li>
+                            <a className='nav-link px-2' href='/scatterPlots'>
+                                <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Area diagram</span>
                             </a>
                         </li>
                     </ul>

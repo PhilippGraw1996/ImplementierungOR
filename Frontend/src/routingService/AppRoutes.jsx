@@ -15,6 +15,7 @@ import HeatMapCrossTab from "../scenes/HeatMapScene";
 import QuerieResults from "../scenes/QuerieResultsByScooter";
 import Heatmap from "../scenes/HeatmapMapScene";
 import AreaDiagram from "../scenes/AreaDiagram";
+import ScatterPlot from "../scenes/ScatterplotScene";
 
 
 const AppRoutes = () => {
@@ -33,6 +34,7 @@ const AppRoutes = () => {
       <Route path="/querie" element={<QuerieResults/>}/>
       <Route path="/heatmapLocation" element={<Heatmap/>}/>
       <Route path="/areaDiagram" element={<AreaDiagram/>}/>
+      <Route path="/scatterPlots" element={<ScatterPlot/>}/>
     </Routes>
   );
 }

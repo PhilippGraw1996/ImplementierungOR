@@ -17,7 +17,7 @@ const BarChartSceneUp = () => {
 
     return(
         <Container className="min-vh-100 pb-5" style={{marginTop: 100}}>   
-            <h1>Bar Chart View - Scooter Data</h1>
+            <h1>Barchart View - Scooter Data</h1>
             <Col style={{marginTop: 30,
                         marginBottom: 100,
                         borderWidth: 1,
