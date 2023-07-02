@@ -133,7 +133,13 @@ const LeftSideBar = () => {
 
                         <li>
                             <a className='nav-link px-2' href='/scatterPlots'>
-                                <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Area diagram</span>
+                                <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Scatterplots</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a className='nav-link px-2' href='/descriptiveTables'>
+                                <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Descriptive tables</span>
                             </a>
                         </li>
                     </ul>

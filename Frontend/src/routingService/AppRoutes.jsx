@@ -16,6 +16,8 @@ import QuerieResults from "../scenes/QuerieResultsByScooter";
 import Heatmap from "../scenes/HeatmapMapScene";
 import AreaDiagram from "../scenes/AreaDiagram";
 import ScatterPlot from "../scenes/ScatterplotScene";
+import DescriptiveTabs from "../scenes/DescriptiveTables";
+import DashboardScene from "../scenes/DashboardSDK";
 
 
 const AppRoutes = () => {
@@ -30,11 +32,14 @@ const AppRoutes = () => {
       <Route path="/heatmapCrossTab" element={<HeatMapCrossTab/>}/>
       <Route path="/parallelLines" element={<ParallelLines/>}/>
       <Route path="/locationMap" element={<StandortKarte/>}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/dashboard" element={<DashboardScene/>}/>
       <Route path="/querie" element={<QuerieResults/>}/>
       <Route path="/heatmapLocation" element={<Heatmap/>}/>
       <Route path="/areaDiagram" element={<AreaDiagram/>}/>
       <Route path="/scatterPlots" element={<ScatterPlot/>}/>
+      <Route path="/descriptiveTables" element={<DescriptiveTabs/>}/>
+
+      /descriptiveTables
     </Routes>
   );
 }
