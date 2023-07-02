@@ -8,6 +8,7 @@ import ChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 
 
+
 const DashboardScene = () => {
 
     const table = '649ff1b0-e5b0-42a4-8f29-c2474beec06a';
@@ -37,7 +38,7 @@ const DashboardScene = () => {
                     </Col>
                 <Col style={{marginTop: 0,
                         marginBottom: 0,
-                        marginRight: 0,
+                        marginRight: 10,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",

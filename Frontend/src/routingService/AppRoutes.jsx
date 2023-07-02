@@ -32,14 +32,12 @@ const AppRoutes = () => {
       <Route path="/heatmapCrossTab" element={<HeatMapCrossTab/>}/>
       <Route path="/parallelLines" element={<ParallelLines/>}/>
       <Route path="/locationMap" element={<StandortKarte/>}/>
-      <Route path="/dashboard" element={<DashboardScene/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/querie" element={<QuerieResults/>}/>
       <Route path="/heatmapLocation" element={<Heatmap/>}/>
       <Route path="/areaDiagram" element={<AreaDiagram/>}/>
       <Route path="/scatterPlots" element={<ScatterPlot/>}/>
       <Route path="/descriptiveTables" element={<DescriptiveTabs/>}/>
-
-      /descriptiveTables
     </Routes>
   );
 }

@@ -3,7 +3,7 @@ import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
 
 
 
-const ChartSDK = ({filter, chartId, height, width}) => {
+const ChartSDK = ({filter, chartId, height, width}) => { 
     const sdk = new ChartsEmbedSDK({baseUrl: 'https://charts.mongodb.com/charts-project-0-judtu'});
     const chartDiv = useRef(null);
     const [rendered, setRendered] = useState(false);

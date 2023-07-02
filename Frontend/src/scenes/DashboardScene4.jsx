@@ -37,7 +37,7 @@ const DashboardScene = () => {
                     </Col>
                 <Col style={{marginTop: 0,
                         marginBottom: 0,
-                        marginRight: 0,
+                        marginRight: 10,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
