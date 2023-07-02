@@ -9,20 +9,90 @@ import ChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 
 
-const DashboardScene = () => {
+const DashboardScene3 = () => {
 
-    const table = '649ff1b0-e5b0-42a4-8f29-c2474beec06a';
-    const pie1 = '649dfacb-b269-4702-8689-1fa3130bc4b3';
-    const pie2 = '649dfc19-e5b0-4467-8dd8-c2474b93d45f';
-    const pie3 = '649dfb81-d8a7-4814-883e-650d4f42f0e2';
-    const heatmap = '64a1c81b-e837-41fd-8d27-ef54e13ca337';
-    const number1 = '64a1c81b-e837-471a-8a58-ef54e13ca335';
-    const number2 = '64a1c81b-e837-4151-8276-ef54e13ca339';
+    const barChartUpOverview = '64a1e1ae-ce67-4935-8766-2d41784dd8e3';
+    const barChartCount = '64a1e1ae-ce67-4d3e-86d6-2d41784dd8e1';
+    const barChartBattery = '64a1e1ae-ce67-47e3-8577-2d41784dd8e5';
+    const barChartSpeed = '64a1e1ae-ce67-445f-8b03-2d41784dd8e9';
+    const barChartDistance = '64a1e1ae-ce67-4616-8ff2-2d41784dd8e7';
+
+
+    const barChartUpOverviewHor = '64a1e1ae-ce67-4f55-8f87-2d41784dd8ed';
+    const barChartCountHor = '64a1e1ae-ce67-47b0-838e-2d41784dd8eb';
+    const barChartBatteryHor = '64a1e1ae-ce67-430e-895f-2d41784dd8f5';
+    const barChartSpeedHor = '64a1e1ae-ce67-4d06-89b8-2d41784dd8f3';
+    const barChartDistanceHor = '64a1e1ae-ce67-4f83-8014-2d41784dd8f0';
 
     return(
         <Container style={{marginTop: 100, marginBottom: 200}}>
+
+            <Row style={{marginTop: 0,
+                        marginBottom: 10,
+                        width: 1320,
+                        height: 100
+                        }}>
+                <Col style={{marginTop: 0,
+                        marginBottom: 0,
+                        marginRight: 10,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 325,
+                        height: 100
+                        }}>   
+                    </Col>
+                    <Col style={{marginTop: 0,
+                        marginBottom: 0,
+                        marginRight: 10,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 325,
+                        height: 100
+                        }}>   
+                    </Col>
+                    <Col style={{marginTop: 0,
+                        marginBottom: 0,
+                        marginRight: 10,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 325,
+                        height: 100
+                        }}>   
+                    </Col>
+                    <Col style={{marginTop: 0,
+                        marginBottom: 0,
+                        marginRight: 0,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 325,
+                        height: 100
+                        }}>   
+                    </Col>
+            </Row>
+
             <h1>Dashboard View - E-Scooter Data</h1>
-            <Row style={{marginTop: 20}}>
+            <Row style={{marginTop: 20,
+                        marginBottom: 0,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1320,
+                        height: 620
+                        }}>
+                <Col>
+                    <ChartSDK height={'600px'} width={'1250px'} chartId={`${barChartUpOverview}`}></ChartSDK>
+                </Col>
+            </Row>
+            <Row style={{marginTop: 10}}>
                 <Col style={{marginTop: 0,
                         marginBottom: 0,
                         marginRight: 10,
@@ -32,32 +102,93 @@ const DashboardScene = () => {
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>  <ChartSDK height={'280px'} width={'400px'} chartId={`${number1}`}></ChartSDK>
+                        }}>  <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartCount}`}></ChartSDK>
                             
                             
                     </Col>
                 <Col style={{marginTop: 0,
                         marginBottom: 0,
-                        marginRight: 10,
+                        marginRight: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>   <ChartSDK height={'280px'} width={'400px'} chartId={`${number2}`}></ChartSDK>
+                        }}>   <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartBattery}`}></ChartSDK>
                             
                 </Col>
 
+            </Row>
+
+            <Row style={{marginTop: 10}}>
                 <Col style={{marginTop: 0,
                         marginBottom: 0,
                         marginRight: 10,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}> 
+                        }}>  <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartSpeed}`}></ChartSDK>
+                            
                             
                     </Col>
+                <Col style={{marginTop: 0,
+                        marginBottom: 0,
+                        marginRight: 0,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 400,
+                        height: 300
+                        }}>   <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartDistance}`}></ChartSDK>
+                            
+                </Col>
 
+            </Row>
+            <hr></hr>
+            <Row style={{marginTop: 10,
+                        marginBottom: 0,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1320,
+                        height: 620
+                        }}>
+                <Col>
+                    <ChartSDK height={'600px'} width={'1250px'} chartId={`${barChartUpOverviewHor}`}></ChartSDK>
+                </Col>
+            </Row>
+            <Row style={{marginTop: 10}}>
+                <Col style={{marginTop: 0,
+                        marginBottom: 0,
+                        marginRight: 10,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 400,
+                        height: 300
+                        }}>  <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartCountHor}`}></ChartSDK>
+                            
+                            
+                    </Col>
+                <Col style={{marginTop: 0,
+                        marginBottom: 0,
+                        marginRight: 0,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 400,
+                        height: 300
+                        }}>   <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartBatteryHor}`}></ChartSDK>
+                            
+                </Col>
 
             </Row>
             <Row style={{marginTop: 10}}>
@@ -70,62 +201,29 @@ const DashboardScene = () => {
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>  <ChartSDK height={'280px'} width={'400px'} filter={{"dayOfWeek": {$gte: 3}}} chartId={`${pie1}`}></ChartSDK>
+                        }}>  <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartSpeedHor}`}></ChartSDK>
                             
-                        </Col>
+                            
+                    </Col>
                 <Col style={{marginTop: 0,
                         marginBottom: 0,
-                        marginRight: 10,
+                        marginRight: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>   <ChartSDK height={'280px'} width={'400px'} chartId={`${pie2}`}></ChartSDK>
+                        }}>   <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartDistanceHor}`}></ChartSDK>
                             
                 </Col>
-                <Col style={{marginTop: 0,
-                        marginBottom: 0,
-                        borderWidth: 1,
-                        borderColor: "#C8C8C8",
-                        borderStyle: "solid",
-                        borderRadius: 10,
-                        width: 400,
-                        height: 300
-                        }}>  <ChartSDK height={'280px'} width={'400px'} chartId={`${pie3}`}></ChartSDK>
-                            
-                </Col>
+
             </Row>
-            <Row style={{marginTop: 10,
-                        marginBottom: 0,
-                        borderWidth: 1,
-                        borderColor: "#C8C8C8",
-                        borderStyle: "solid",
-                        borderRadius: 10,
-                        width: 1320,
-                        height: 700
-                        }}>
-                <Col>
-                    <ChartSDK height={'650px'} width={'1250px'} chartId={`${heatmap}`}></ChartSDK>
-                </Col>
-            </Row>
-            <Row style={{marginTop: 10,
-                        marginBottom: 0,
-                        borderWidth: 1,
-                        borderColor: "#C8C8C8",
-                        borderStyle: "solid",
-                        borderRadius: 10,
-                        width: 1320,
-                        height: 700
-                        }}>
-                <Col>
-                    <ChartSDK height={'650px'} width={'1250px'} chartId={`${table}`}></ChartSDK>
-                </Col>
-            </Row>
+
+
         </Container>
     );
 
 }
 
-export default DashboardScene;
+export default DashboardScene3;
