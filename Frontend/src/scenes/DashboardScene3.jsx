@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {Row} from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
@@ -24,60 +24,10 @@ const DashboardScene3 = () => {
     const barChartSpeedHor = '64a1e1ae-ce67-4d06-89b8-2d41784dd8f3';
     const barChartDistanceHor = '64a1e1ae-ce67-4f83-8014-2d41784dd8f0';
 
+    const [filter, setFilter] = useState(1);
+
     return(
-        <Container style={{marginTop: 100, marginBottom: 200}}>
-
-            <Row style={{marginTop: 0,
-                        marginBottom: 10,
-                        width: 1320,
-                        height: 100
-                        }}>
-                <Col style={{marginTop: 0,
-                        marginBottom: 0,
-                        marginRight: 10,
-                        borderWidth: 1,
-                        borderColor: "#C8C8C8",
-                        borderStyle: "solid",
-                        borderRadius: 10,
-                        width: 325,
-                        height: 100
-                        }}>   
-                    </Col>
-                    <Col style={{marginTop: 0,
-                        marginBottom: 0,
-                        marginRight: 10,
-                        borderWidth: 1,
-                        borderColor: "#C8C8C8",
-                        borderStyle: "solid",
-                        borderRadius: 10,
-                        width: 325,
-                        height: 100
-                        }}>   
-                    </Col>
-                    <Col style={{marginTop: 0,
-                        marginBottom: 0,
-                        marginRight: 10,
-                        borderWidth: 1,
-                        borderColor: "#C8C8C8",
-                        borderStyle: "solid",
-                        borderRadius: 10,
-                        width: 325,
-                        height: 100
-                        }}>   
-                    </Col>
-                    <Col style={{marginTop: 0,
-                        marginBottom: 0,
-                        marginRight: 0,
-                        borderWidth: 1,
-                        borderColor: "#C8C8C8",
-                        borderStyle: "solid",
-                        borderRadius: 10,
-                        width: 325,
-                        height: 100
-                        }}>   
-                    </Col>
-            </Row>
-
+        <Container style={{marginBottom: 200}}>
             <h1>Dashboard View - E-Scooter Data</h1>
             <Row style={{marginTop: 20,
                         marginBottom: 0,

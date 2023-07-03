@@ -19,7 +19,7 @@ const DashboardScene = () => {
     const number2 = '64a1c81b-e837-4151-8276-ef54e13ca339';
 
     return(
-        <Container style={{marginTop: 100, marginBottom: 200}}>
+        <Container style={{marginBottom: 200}}>
             <h1>Dashboard View - E-Scooter Data</h1>
             <Row style={{marginTop: 20}}>
                 <Col style={{marginTop: 0,

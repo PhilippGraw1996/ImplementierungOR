@@ -15,7 +15,7 @@ const DashboardScene = () => {
 
 
     return(
-        <Container style={{marginTop: 100, marginBottom: 200}}>
+        <Container style={{marginBottom: 200}}>
             <h1>Dashboard View Location Maps- E-Scooter Data</h1>
             <Row style={{marginTop: 10,
                         marginBottom: 0,
