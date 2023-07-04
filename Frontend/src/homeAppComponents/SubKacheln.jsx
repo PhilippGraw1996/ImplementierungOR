@@ -18,10 +18,6 @@ import parallel from "../Images/ParallelLinesDiagrammFinal.jpg";
 import standOrtKarte from "../Images/StandOrtKarteFinal.jpg";
 
 
-
-
-
-
 const SubKacheln = () => {
     const renderArray = [
         {

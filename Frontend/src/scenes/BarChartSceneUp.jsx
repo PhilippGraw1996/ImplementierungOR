@@ -25,7 +25,7 @@ const BarChartSceneUp = () => {
 
     return(
         <Container className="min-vh-100 pb-5" style={{marginTop: 100}}>   
-
+            <h1>Barchart View</h1>
             <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
@@ -33,42 +33,94 @@ const BarChartSceneUp = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 1450,
-                        height: 100
+                        height: 60
                         }}>
                 <Form onSubmit={submitHandler}>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(1)}>Amount of Trips by Weekday</Button>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(2)}>Amount of Trips by Hour of Day</Button>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(3)}>Amount of Trips by Weekend (yes/no)</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(4)}>Amount of Trips by Weekend (yes/no)</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(5)}>Amount of Trips by Weekend (yes/no)</Button>
                     </Form>
+
             </Row>
 
-            <h1>Barchart View - Scooter Data</h1>
-            <Col style={{marginTop: 30,
+            {filter === 1 &&            
+                     <Row style={{marginTop: 20,
                         marginBottom: 100,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
-                        width: 1300,
+                        width: 1450,
                         height: 700
                         }}>
-                <Row>
-                    <BarChartSDK height={'650px'} width={'1250px'} chartId={`${mainBarChart}`}></BarChartSDK>
-                </Row>
-            </Col>
-            <Col style={{marginTop: 30,
+                        <Col>
+                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${mainBarChart}`}></BarChartSDK>
+                        </Col>
+                    </Row>}
+                    {filter === 2 &&            
+                     <Row style={{marginTop: 20,
                         marginBottom: 100,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
-                        width: 1300,
+                        width: 1450,
                         height: 700
                         }}>
-                <Row>
-                    <BarChartSDK height={'650px'} width={'1250px'} chartId={`${durationBarChart}`}></BarChartSDK>
-                </Row>
-            </Col>
+                        <Col>
+                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${speedBarChart}`}></BarChartSDK>
+                        </Col>
+                    </Row>}
+
+                    {filter === 3 &&            
+                     <Row style={{marginTop: 20,
+                        marginBottom: 100,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1450,
+                        height: 700
+                        }}>
+                        <Col>
+                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${durationBarChart}`}></BarChartSDK>
+                        </Col>
+                    </Row>}
+
+
+                    {filter === 4 &&            
+                     <Row style={{marginTop: 20,
+                        marginBottom: 100,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1450,
+                        height: 700
+                        }}>
+                        <Col>
+                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${batteryDevBarChart}`}></BarChartSDK>
+                        </Col>
+                    </Row>}
+
+
+                    {filter === 5 &&            
+                     <Row style={{marginTop: 20,
+                        marginBottom: 100,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1450,
+                        height: 700
+                        }}>
+                        <Col>
+                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${distanceBarChart}`}></BarChartSDK>
+                        </Col>
+                    </Row>}
+
 
         </Container>
     );

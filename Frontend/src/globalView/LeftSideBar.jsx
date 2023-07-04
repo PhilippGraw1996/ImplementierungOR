@@ -70,21 +70,22 @@ const LeftSideBar = () => {
                             </a>
                         </li>
                         <li>
-                            <a className='nav-link px-2' href='/boxplot'>
-                                <i className='bi bi-align-middle' /> <span className='ms-1 d-none d-sm-inline'>Boxplot</span>
-                            </a>
-                        </li>
-
-                        <hr></hr>
-                        <h5>Location Maps </h5>
-                        <li>
                             <a className='nav-link px-2' href='/pieChart'>
                                 <i className='bi-table' /> <span className='ms-1 d-none d-sm-inline'>Piechart</span>
                             </a>
                         </li>
                         <li>
-                            <a className='nav-link px-2' href='/lineChart'>
-                                <i className="bi bi-graph-up" /> <span className='ms-1 d-none d-sm-inline'>Diagram</span>
+                            <a className='nav-link px-2' href='/areaDiagram'>
+                                <i className='bi-house' /> <span className='ms-1 d-none d-sm-inline'>Areachart</span>
+                            </a>
+                        </li>
+
+
+                        <hr></hr>
+                        <h5>Location Maps </h5>
+                        <li>
+                            <a className='nav-link px-2' href='/heatmapLocation'>
+                                <i className='bi-map' /> <span className='ms-1 d-none d-sm-inline'>Heatmap</span>
                             </a>
                         </li>
                         <li>
@@ -94,22 +95,18 @@ const LeftSideBar = () => {
                         </li>
 
                         <hr></hr>
-                        <h5>Scatterplots & Tables</h5>
+                        <h5>Scatterplots & Graphs</h5>
                         <li>
-                            <a className='nav-link px-2' href='/akkordDiagramm'>
-                                <i className='bi-house' /> <span className='ms-1 d-none d-sm-inline'>Akkord Diagramm???</span>
+                            <a className='nav-link px-2' href='/lineChart'>
+                                <i className="bi bi-graph-up" /> <span className='ms-1 d-none d-sm-inline'>Graph's</span>
                             </a>
                         </li>
                         <li>
-                            <a className='nav-link px-2' href='/flussDiagram'>
-                                <i className='bi-speedometer' /> <span className='ms-1 d-none d-sm-inline'>Fluss Karte???</span>
+                            <a className='nav-link px-2' href='/scatterPlots'>
+                                <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Scatterplots</span>
                             </a>
                         </li>
-                        <li>
-                            <a className='nav-link px-2' href='/parallelLines'>
-                                <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Parallel Diagramm???</span>
-                            </a>
-                        </li>
+
 
                         <hr></hr>
                         <h5>Descriptive Statistics</h5>
@@ -118,25 +115,6 @@ const LeftSideBar = () => {
                                 <i className="bi bi-grid-3x3" /> <span className='ms-1 d-none d-sm-inline'>Heatmap table</span>
                             </a>
                         </li>
-                        <li>
-                            <a className='nav-link px-2' href='/heatmapLocation'>
-                                <i className='bi-map' /> <span className='ms-1 d-none d-sm-inline'>Heatmap</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a className='nav-link px-2' href='/areaDiagram'>
-                                <i className='bi-house' /> <span className='ms-1 d-none d-sm-inline'>Area diagram</span>
-                            </a>
-                        </li>
-
-                        <hr></hr>
-
-                        <li>
-                            <a className='nav-link px-2' href='/scatterPlots'>
-                                <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Scatterplots</span>
-                            </a>
-                        </li>
-
                         <li>
                             <a className='nav-link px-2' href='/descriptiveTables'>
                                 <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Descriptive tables</span>
@@ -184,5 +162,30 @@ export default observer(LeftSideBar);
     </Button>
 </Form>
 <hr></hr>
+
+*/
+
+/*
+                        <li>
+                            <a className='nav-link px-2' href='/boxplot'>
+                                <i className='bi bi-align-middle' /> <span className='ms-1 d-none d-sm-inline'>Boxplot</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a className='nav-link px-2' href='/akkordDiagramm'>
+                                <i className='bi-house' /> <span className='ms-1 d-none d-sm-inline'>Akkord Diagramm???</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a className='nav-link px-2' href='/flussDiagram'>
+                                <i className='bi-speedometer' /> <span className='ms-1 d-none d-sm-inline'>Fluss Karte???</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a className='nav-link px-2' href='/parallelLines'>
+                                <i className='bi bi-graph-down' /> <span className='ms-1 d-none d-sm-inline'>Parallel Diagramm???</span>
+                            </a>
+                        </li>
+
 
 */
