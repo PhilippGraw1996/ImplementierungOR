@@ -8,7 +8,7 @@ import ChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 
 
-const DashboardScene = () => {
+const DashboardScene = (props) => {
 
     const table = '649ff1b0-e5b0-42a4-8f29-c2474beec06a';
     const pie1 = '649dfacb-b269-4702-8689-1fa3130bc4b3';
@@ -17,10 +17,9 @@ const DashboardScene = () => {
     const heatmap = '64a1c81b-e837-41fd-8d27-ef54e13ca337';
     const number1 = '64a1c81b-e837-471a-8a58-ef54e13ca335';
     const number2 = '64a1c81b-e837-4151-8276-ef54e13ca339';
-
     return(
         <Container style={{marginBottom: 200}}>
-            <h1>Dashboard View - E-Scooter Data</h1>
+            <h1>{`Dashboard View - Descriptive Statistics (${props.filter}/4)`}</h1>
             <Row style={{marginTop: 20}}>
                 <Col style={{marginTop: 0,
                         marginBottom: 0,

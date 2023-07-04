@@ -8,15 +8,15 @@ import ChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 
 
-const DashboardScene = () => {
+const DashboardScene = (props) => {
 
     const heatmap = '649eef57-f2f0-4cd5-8f67-11daba6cb100';
     const locationMap = '649efa26-e837-4aa6-8299-ef54e1a17554';
-
+   
 
     return(
         <Container style={{marginBottom: 200}}>
-            <h1>Dashboard View Location Maps- E-Scooter Data</h1>
+            <h1>{`Dashboard View - Location Maps (${props.filter}/4)`}</h1>
             <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,

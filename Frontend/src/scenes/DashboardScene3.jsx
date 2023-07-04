@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {Row} from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
@@ -9,37 +9,35 @@ import ChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 
 
-const DashboardScene3 = () => {
+const DashboardScene3 = (props) => {
 
-    const barChartUpOverview = '64a1e1ae-ce67-4935-8766-2d41784dd8e3';
-    const barChartCount = '64a1e1ae-ce67-4d3e-86d6-2d41784dd8e1';
-    const barChartBattery = '64a1e1ae-ce67-47e3-8577-2d41784dd8e5';
-    const barChartSpeed = '64a1e1ae-ce67-445f-8b03-2d41784dd8e9';
-    const barChartDistance = '64a1e1ae-ce67-4616-8ff2-2d41784dd8e7';
+    const barChartUpOverview = '64a008b1-84f0-498c-8fa1-a5891edbe4d8';
+    const barChartDuration = '64a008b1-84f0-4ff8-889b-a5891edbe4d6';
+    const barChartBattery = '64a008b1-84f0-4b64-80db-a5891edbe4da';
+    const barChartSpeed = '64a008b1-84f0-4c2e-862e-a5891edbe4de';
+    const barChartDistance = '64a008b1-84f0-47f1-8231-a5891edbe4dc';
 
 
-    const barChartUpOverviewHor = '64a1e1ae-ce67-4f55-8f87-2d41784dd8ed';
-    const barChartCountHor = '64a1e1ae-ce67-47b0-838e-2d41784dd8eb';
-    const barChartBatteryHor = '64a1e1ae-ce67-430e-895f-2d41784dd8f5';
-    const barChartSpeedHor = '64a1e1ae-ce67-4d06-89b8-2d41784dd8f3';
-    const barChartDistanceHor = '64a1e1ae-ce67-4f83-8014-2d41784dd8f0';
-
-    const [filter, setFilter] = useState(1);
+    const barChartUpOverviewHor = '64a008b1-84f0-4caa-8c75-a5891edbe4e2';
+    const barChartDistHor = '64a008b1-84f0-4540-8c94-a5891edbe4e4';
+    const barChartBatteryHor = '64a008b1-84f0-4c21-85a3-a5891edbe4e8';
+    const barChartSpeedHor = '64a008b1-84f0-45c2-858c-a5891edbe4e6';
+    const barChartDurationHor = '64a008b1-84f0-489c-81c6-a5891edbe4e0';
 
     return(
         <Container style={{marginBottom: 200}}>
-            <h1>Dashboard View - E-Scooter Data</h1>
+            <h1>{`Dashboard View - Barcharts (${props.filter}/4)`}</h1>
             <Row style={{marginTop: 20,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
-                        width: 1320,
+                        width: 1450,
                         height: 620
                         }}>
                 <Col>
-                    <ChartSDK height={'600px'} width={'1250px'} chartId={`${barChartUpOverview}`}></ChartSDK>
+                    <ChartSDK height={'600px'} width={'1430px'} chartId={`${barChartUpOverview}`}></ChartSDK>
                 </Col>
             </Row>
             <Row style={{marginTop: 10}}>
@@ -52,7 +50,7 @@ const DashboardScene3 = () => {
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>  <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartCount}`}></ChartSDK>
+                        }}>  <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartDuration}`}></ChartSDK>
                             
                             
                     </Col>
@@ -123,7 +121,7 @@ const DashboardScene3 = () => {
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>  <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartCountHor}`}></ChartSDK>
+                        }}>  <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartDistHor}`}></ChartSDK>
                             
                             
                     </Col>
@@ -164,7 +162,7 @@ const DashboardScene3 = () => {
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>   <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartDistanceHor}`}></ChartSDK>
+                        }}>   <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartDurationHor}`}></ChartSDK>
                             
                 </Col>
 

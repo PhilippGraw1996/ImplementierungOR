@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 import LineChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
-import {Form, FormGroup, FormLabel, Row} from 'react-bootstrap';
+import {Form, Row} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
@@ -23,25 +23,53 @@ const AreaDiagram = () => {
             <Col style={{marginTop: 30,
                         marginBottom: 100,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        borderRadius: "5px",
-                        width: 1300,
-                        height: 700
+                        borderRadius: 10,
+                        width: 1450,
+                        height: 750
                         }}>
                 <Row>
-                    <LineChartSDK height={'650px'} width={'1250px'} chartId={`${mainChart}`}></LineChartSDK>
+                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${mainChart}`}></LineChartSDK>
+                </Row>
+
+                <Row>
+                    <Form>
+                        <Button style={{marginTop: 0, marginLeft: 10}}>First Selection</Button>
+                        <Button style={{marginTop: 0, marginLeft: 10}}>Second Selection</Button>
+                        <Form.Select style={{width: 300, marginTop: 5, marginLeft: 10}}>
+                            <option>Choose </option>
+                            <option value="1">One </option>
+                            <option value="2">Two </option>
+                            <option value="3">Three </option>
+                        </Form.Select>
+                    </Form>
                 </Row>
             </Col>
             <Col style={{marginTop: 30,
                         marginBottom: 100,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        borderRadius: "5px",
-                        width: 1300,
-                        height: 700
+                        borderRadius: 10,
+                        width: 1450,
+                        height: 750
                         }}>
                 <Row>
-                    <LineChartSDK height={'650px'} width={'1250px'} chartId={`${secondChart}`} ></LineChartSDK>
+                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${secondChart}`} ></LineChartSDK>
+                </Row>
+
+                <Row>
+                    <Form>
+                        <Button style={{marginTop: 0, marginLeft: 10}}>First Selection</Button>
+                        <Button style={{marginTop: 0, marginLeft: 10}}>Second Selection</Button>
+                        <Form.Select style={{width: 300, marginTop: 5, marginLeft: 10}}>
+                            <option>Choose </option>
+                            <option value="1">One </option>
+                            <option value="2">Two </option>
+                            <option value="3">Three </option>
+                        </Form.Select>
+                    </Form>
                 </Row>
             </Col>
 

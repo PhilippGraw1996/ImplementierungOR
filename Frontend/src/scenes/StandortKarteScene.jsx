@@ -16,12 +16,14 @@ const StandortKarteScene = () => {
             <Row style={{marginTop: 30,
                         marginBottom: 100,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        width: 1300,
+                        borderRadius: 10,
+                        width: 1450,
                         height: 700
                         }}>
                 <Col>
-                    <LocationChartSDK height={'680px'} width={'1250px'} chartId={`${locationMap}`}></LocationChartSDK>
+                    <LocationChartSDK height={'680px'} width={'1430px'} chartId={`${locationMap}`}></LocationChartSDK>
                 </Col>
             </Row>
 

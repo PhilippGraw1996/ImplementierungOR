@@ -8,6 +8,10 @@ import {Row} from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
 
+import BackgroundImage from "../Images/DashBoard.jpg"
+
+import Button from 'react-bootstrap/Button';
+
 
 const MainDashboardScene = () => {
 
@@ -19,7 +23,7 @@ const MainDashboardScene = () => {
 
     return(
         <div>
-                    <Container style={{marginTop: 100}}>
+            <Container style={{marginTop: 100}}>
             <form onSubmit={submitHandler}>
             <Row style={{marginTop: 0,
                         marginBottom: 10,
@@ -34,10 +38,14 @@ const MainDashboardScene = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 325,
-                        height: 100
-                        }}>   <button type="submit"
+                        height: 100,
+                        backgroundImage: BackgroundImage
+                        }}>   <Button type="submit"
                                       onClick={() => setFilter(1)}
-                                    >First</button>
+                                      style={{background: "#26D477",
+                                      marginTop: "30px",
+                                      marginLeft: "85px"}}
+                                    >Dashboard 1/4</Button>
                     </Col>
                     <Col style={{marginTop: 0,
                         marginBottom: 0,
@@ -47,10 +55,14 @@ const MainDashboardScene = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 325,
-                        height: 100
-                        }}>   <button type="submit"
+                        height: 100,
+                        backgroundImage: BackgroundImage
+                        }}>   <Button type="submit"
                                       onClick={() => setFilter(2)}
-                                    >First</button>
+                                      style={{background: "#26D477",
+                                              marginTop: "30px",
+                                              marginLeft: "85px"}}
+                                    >Dashboard 2/4</Button>
                     </Col>
                     <Col style={{marginTop: 0,
                         marginBottom: 0,
@@ -60,10 +72,19 @@ const MainDashboardScene = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 325,
-                        height: 100
-                        }}>   <button type="submit"
-                                      onClick={() => setFilter(3)}
-                                    >First</button>
+                        height: 100,
+                        backgroundImage: BackgroundImage
+                        }}>      
+                                    <Button type="submit"
+                                        onClick={() => setFilter(3)}
+                                        style={{background: "#26D477",
+                                              borderColor: "26D477",
+                                              align: "center",
+                                              marginTop: "30px",
+                                              marginLeft: "85px"
+                                    }}
+
+                                    >Dashboard 3/4</Button>
                     </Col>
                     <Col style={{marginTop: 0,
                         marginBottom: 0,
@@ -73,10 +94,14 @@ const MainDashboardScene = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 325,
-                        height: 100
-                        }}>   <button type="submit"
+                        height: 100,
+                        backgroundImage: BackgroundImage
+                        }}>   <Button type="submit"
                                       onClick={() => setFilter(4)}
-                                    >First</button>
+                                      style={{background: "#26D477",
+                                      marginTop: "30px",
+                                      marginLeft: "85px"}}
+                                    >Dashboard 4/4</Button>
                     </Col>
             </Row>
             </form>
@@ -84,10 +109,10 @@ const MainDashboardScene = () => {
 
 
         <div>
-            {filter === 1 && <DashboardScene/>}
-            {filter === 2 && <DashboardScene2/>}
-            {filter === 3 && <DashboardScene3/>}
-            {filter === 4 && <DashboardScene4/>}
+            {filter === 1 && <DashboardScene filter={filter}/>}
+            {filter === 2 && <DashboardScene4 filter={filter}/>}
+            {filter === 3 && <DashboardScene3 filter={filter}/>}
+            {filter === 4 && <DashboardScene2 filter={filter}/>}
         </div>
         </div>
     );

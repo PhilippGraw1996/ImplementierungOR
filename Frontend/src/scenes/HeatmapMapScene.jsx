@@ -17,13 +17,14 @@ const HeatMapScene = () => {
             <Col style={{marginTop: 30,
                         marginBottom: 100,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        borderRadius: "5px",
-                        width: 1300,
+                        borderRadius: 10,
+                        width: 1450,
                         height: 700
                         }}>
                 <Row>
-                    <HeatmapSDK height={'680px'} width={'1250px'} chartId={`${heatMap}`}></HeatmapSDK>
+                    <HeatmapSDK height={'680px'} width={'1430px'} chartId={`${heatMap}`}></HeatmapSDK>
                 </Row>
             </Col>
 

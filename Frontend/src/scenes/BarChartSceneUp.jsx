@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import BarChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 import {Row} from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import Col from 'react-bootstrap/Col';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const BarChartSceneUp = () => {
+
+    const [filter, setFilter] = useState(1);
+
+    const submitHandler = (e) => {
+        e.preventDefault(1)
+    }
 
     const mainBarChart = '649ff95b-58ae-4c40-8bdf-032013080e3d';
     const speedBarChart = '649ffca7-84f0-43c9-88d0-a5891ed4b69e';
@@ -17,6 +25,23 @@ const BarChartSceneUp = () => {
 
     return(
         <Container className="min-vh-100 pb-5" style={{marginTop: 100}}>   
+
+            <Row style={{marginTop: 10,
+                        marginBottom: 0,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1450,
+                        height: 100
+                        }}>
+                <Form onSubmit={submitHandler}>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(1)}>Amount of Trips by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(2)}>Amount of Trips by Hour of Day</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(3)}>Amount of Trips by Weekend (yes/no)</Button>
+                    </Form>
+            </Row>
+
             <h1>Barchart View - Scooter Data</h1>
             <Col style={{marginTop: 30,
                         marginBottom: 100,

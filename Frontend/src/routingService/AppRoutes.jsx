@@ -9,7 +9,7 @@ import BarChart from "../scenes/BarChartSceneHorizontal";
 import BarChartUp from "../scenes/BarChartSceneUp";
 import Linechart from "../scenes/LineChartScene";
 import ParallelLines from "../scenes/ParallelLinesScene";
-import Dashboard from "../scenes/DashboardScene3";
+import Dashboard from "../scenes/MainDashboardScene";
 import StandortKarte from "../scenes/StandortKarteScene";
 import HeatMapCrossTab from "../scenes/HeatMapScene";
 import QuerieResults from "../scenes/QuerieResultsByScooter";
