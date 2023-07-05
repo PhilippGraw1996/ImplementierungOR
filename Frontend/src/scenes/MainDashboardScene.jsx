@@ -44,6 +44,7 @@ const MainDashboardScene = () => {
                                       onClick={() => setFilter(1)}
                                       style={{background: "#26D477",
                                       marginTop: "30px",
+                                      borderColor: "#26D477",
                                       marginLeft: "85px"}}
                                     >Dashboard 1/4</Button>
                     </Col>
@@ -61,6 +62,7 @@ const MainDashboardScene = () => {
                                       onClick={() => setFilter(2)}
                                       style={{background: "#26D477",
                                               marginTop: "30px",
+                                              borderColor: "#26D477",
                                               marginLeft: "85px"}}
                                     >Dashboard 2/4</Button>
                     </Col>
@@ -78,7 +80,7 @@ const MainDashboardScene = () => {
                                     <Button type="submit"
                                         onClick={() => setFilter(3)}
                                         style={{background: "#26D477",
-                                              borderColor: "26D477",
+                                              borderColor: "#26D477",
                                               align: "center",
                                               marginTop: "30px",
                                               marginLeft: "85px"
@@ -99,6 +101,7 @@ const MainDashboardScene = () => {
                         }}>   <Button type="submit"
                                       onClick={() => setFilter(4)}
                                       style={{background: "#26D477",
+                                      borderColor: "#26D477",
                                       marginTop: "30px",
                                       marginLeft: "85px"}}
                                     >Dashboard 4/4</Button>

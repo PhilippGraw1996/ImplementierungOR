@@ -12,9 +12,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-vh-100">
-          <Header></Header>
-          <LeftSideBar></LeftSideBar>
-          <Footer></Footer>     
+          <Header style={{zIndex: "100"}}></Header>
+          <LeftSideBar style={{zIndex: "99"}}></LeftSideBar>
+          <Footer style={{zIndex: "100"}}></Footer>     
       </div>
     </BrowserRouter>
   );

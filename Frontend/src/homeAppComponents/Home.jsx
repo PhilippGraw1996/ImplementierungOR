@@ -22,9 +22,27 @@ function Home() {
 
         <div style={{zIndex: "1"}}>
             <Kacheln style={{marginTop: 0}}/>
+        </div>      
+
+        <div style={{marginTop: 40}}>
+            <hr></hr>   
+            <h1>Grafical analysis</h1>
         </div>
-    
-        <Container style={{marginTop: 80}}>
+
+        <div style={{zIndex: "1", marginTop: 0, marginBottom: 80}}>
+            <SubKacheln></SubKacheln>
+        </div>
+  </Container>
+  );
+}
+
+export default Home;
+
+
+
+/**
+ * 
+ *         <Container style={{marginTop: 80}}>
             <hr></hr>   
             <h1>Zeitraum der Anaylse</h1>
             <Form>
@@ -55,18 +73,7 @@ function Home() {
                 <h4 style={{marginTop:15}}>Für den Gewählten Zeitraum existieren 27598 Einträge.</h4>
                 </Row>
             </Form>
-        </Container>        
-
-        <div style={{marginTop: 40}}>
-            <hr></hr>   
-            <h1>Grafische Analyse</h1>
-        </div>
-
-        <div style={{zIndex: "1", marginTop: 0, marginBottom: 80}}>
-            <SubKacheln></SubKacheln>
-        </div>
-  </Container>
-  );
-}
-
-export default Home;
+        </Container>    
+ * 
+ * 
+ */

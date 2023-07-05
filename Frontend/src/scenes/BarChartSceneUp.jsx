@@ -36,11 +36,11 @@ const BarChartSceneUp = () => {
                         height: 60
                         }}>
                 <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(1)}>Amount of Trips by Weekday</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(2)}>Amount of Trips by Hour of Day</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(3)}>Amount of Trips by Weekend (yes/no)</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(4)}>Amount of Trips by Weekend (yes/no)</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(5)}>Amount of Trips by Weekend (yes/no)</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, borderColor: "#26D477", backgroundColor: "#26D477"}} onClick={() => setFilter(1)}>Overview</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, borderColor: "#26D477", backgroundColor: "#26D477"}} onClick={() => setFilter(2)}>Speed Distribution by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, borderColor: "#26D477", backgroundColor: "#26D477"}} onClick={() => setFilter(3)}>Trip Duration Distribution by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, borderColor: "#26D477", backgroundColor: "#26D477"}} onClick={() => setFilter(4)}>Batterydeviation Distribution by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, borderColor: "#26D477", backgroundColor: "#26D477"}} onClick={() => setFilter(5)}>Distance Distribution by Weekday</Button>
                     </Form>
 
             </Row>

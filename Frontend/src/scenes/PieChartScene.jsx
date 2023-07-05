@@ -31,9 +31,9 @@ const PieChartScene = () => {
                         height: 60
                         }}>
                 <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(1)}>Amount of Trips by Weekday</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(2)}>Amount of Trips by Hour of Day</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setFilter(3)}>Amount of Trips by Weekend (yes/no)</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, borderColor: "#26D477", backgroundColor: "#26D477"}} onClick={() => setFilter(1)}>Amount of Trips by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, borderColor: "#26D477", backgroundColor: "#26D477"}} onClick={() => setFilter(2)}>Amount of Trips by Hour of Day</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, borderColor: "#26D477", backgroundColor: "#26D477"}} onClick={() => setFilter(3)}>Amount of Trips by Weekend (yes/no)</Button>
                     </Form>
             </Row>
         { filter === 1 && <Row style={{marginTop: 20,

@@ -22,46 +22,28 @@ const SubKacheln = () => {
     const renderArray = [
         {
             "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Boxplot",
-            "index": 1,
-            "image": boxplot,
-            "DetailPageLink": "/boxPlot"
-        }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Kreis",
+            "cardHeading": "Piechart",
             "index": 2,
             "image": pie,
             "DetailPageLink": "/pieChart"
         }, {
             "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Balken",
+            "cardHeading": "Barchart",
             "index": 3,
             "image": bar,
             "DetailPageLink": "/barChart"
         }, {
             "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Linien Diagramm",
+            "cardHeading": "Graph's",
             "index": 4,
             "image": line,
             "DetailPageLink": "/lineChart"
         }, {
             "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Standort",
+            "cardHeading": "Location Map",
             "index": 5,
             "image": standOrtKarte,
             "DetailPageLink": "/locationMap"
-        }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Akkord",
-            "index": 6,
-            "image": akkord,
-            "DetailPageLink": "/akkordDiagramm"
-        },         {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Fluss",
-            "index": 7,
-            "image": fluss,
-            "DetailPageLink": "/flussDiagram"
         }, {
             "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
             "cardHeading": "Parrallel",
@@ -76,13 +58,13 @@ const SubKacheln = () => {
             "DetailPageLink": "/heatmapCrossTab"
         }, {
             "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Heatmap Karte",
+            "cardHeading": "Geo Heatmap",
             "index": 10,
             "image": heatMapKarte,
             "DetailPageLink": "/heatmapLocation"
         }, {
             "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Fläche",
+            "cardHeading": "Areachart",
             "index": 11,
             "image": area,
             "DetailPageLink": "/areaDiagram"
@@ -122,3 +104,31 @@ const SubKacheln = () => {
 }
 
 export default SubKacheln;
+
+
+
+/**
+ *         {
+            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
+            "cardHeading": "Boxplot",
+            "index": 1,
+            "image": boxplot,
+            "DetailPageLink": "/boxPlot"
+        }, 
+        {
+            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
+            "cardHeading": "Akkord",
+            "index": 6,
+            "image": akkord,
+            "DetailPageLink": "/akkordDiagramm"
+        },     
+        
+         {
+            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
+            "cardHeading": "Fluss",
+            "index": 7,
+            "image": fluss,
+            "DetailPageLink": "/flussDiagram"
+        }, 
+
+ */
