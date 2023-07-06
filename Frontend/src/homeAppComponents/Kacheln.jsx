@@ -13,23 +13,23 @@ const AnalysisTool = () => {
 
   const renderArray = [
     {
-      "shortText": "Die Heatmap dient der Analyse von häufig frequentierten Gebieten in Hannover.",
-      "cardHeading": "Heatmap",
+      "shortText": "The four different Dashboards show the aggregated view over all Graphs, Charts and Maps.",
+      "cardHeading": "Dashboards",
       "index": 1,
       "image": left,
-      "DetailPageLink": "/heatmapCrossTab"
+      "DetailPageLink": "/dashboard"
     }, {
-      "shortText": "Die Dashboardfunktion stellt dynamische Analysen häufig genutzter Kennzahlen von E-Scootern zur Verfügung.",
-      "cardHeading": "Linien Diagramm",
+      "shortText": "Manual Queries offer the possibility to querie data sorted by different categories. The amount of the returned results can be adjusted.",
+      "cardHeading": "Manual Queries",
       "index": 2,
       "image": middle,
-      "DetailPageLink": "/lineChart"
+      "DetailPageLink": "/querie"
     }, {
-      "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-      "cardHeading": "Standort Analyse",
+      "shortText": "The Location Map offers the possibility to analyse start and destination Locations of the Scooters.",
+      "cardHeading": "Location Analysis",
       "index": 3,
       "image": right,
-      "DetailPageLink": "/standort"
+      "DetailPageLink": "/locationMap"
     }
 
   ]

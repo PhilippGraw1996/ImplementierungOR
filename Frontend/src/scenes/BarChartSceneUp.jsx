@@ -66,7 +66,7 @@ const BarChartSceneUp = () => {
             </Row>
 
             {selection === 1 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -80,7 +80,7 @@ const BarChartSceneUp = () => {
                         </Col>
                     </Row>}
                     {selection === 2 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -95,7 +95,7 @@ const BarChartSceneUp = () => {
                     </Row>}
 
                     {selection === 3 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -111,7 +111,7 @@ const BarChartSceneUp = () => {
 
 
                     {selection === 4 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -127,7 +127,7 @@ const BarChartSceneUp = () => {
 
 
                     {selection === 5 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",

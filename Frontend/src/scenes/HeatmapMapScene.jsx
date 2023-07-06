@@ -70,8 +70,8 @@ const HeatMapScene = () => {
             </Row>
 
 
-            {selection === 1 && <Row style={{marginTop: 30,
-                        marginBottom: 100,
+            {selection === 1 && <Row style={{marginTop: 10,
+                        marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
@@ -84,7 +84,7 @@ const HeatMapScene = () => {
                 </Col>
             </Row>}
 
-            {selection === 2 && <Row style={{marginTop: 30,
+            {selection === 2 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -98,8 +98,8 @@ const HeatMapScene = () => {
                 </Col>
             </Row>}
 
-            {selection === 3 && <div>    <Row style={{marginTop: 30,
-                        marginBottom: 20,
+            {selection === 3 && <div>    <Row style={{marginTop: 10,
+                        marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
@@ -112,7 +112,7 @@ const HeatMapScene = () => {
                 </Col>
             </Row>    
                 
-                <Row style={{marginTop: 5,
+                <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",

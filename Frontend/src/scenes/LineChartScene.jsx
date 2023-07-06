@@ -15,9 +15,9 @@ import DatePicker from "react-datepicker";
 
 const LineChartScene = () => {
 
-    const mainChart = '649fe3f0-2ac4-41cc-829d-c2e1a94ef2f4';
-    const secondChart = '649fe631-84f0-4aa6-8a7e-a5891ecb6175';
-    const thirdChart = '649fe631-84f0-4aa6-8a7e-a5891ecb6175';
+    const mainChart = '64a684d8-e779-4fd3-8412-7d64813e8898';
+    const secondChart = '64a6854e-bfd6-4f0d-8585-aed10e5d039a';
+    const thirdChart = '64a6846e-bfd6-47e5-88b3-aed10e5cae23';
 
     const [startDate, setStartDate] = useState(new Date("2019-01-01"));
     const [endDate, setEndDate] = useState(new Date("2021-12-31"));
@@ -55,13 +55,14 @@ const LineChartScene = () => {
                         height: 60
                         }}>
                     <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Overview</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Speed Distribution by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Cumulative view</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Absolut amount of Trips</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Absolut amount of Trips Bar</Button>
                     </Form>
 
             </Row>
 
-            {selection === 1 && <Row style={{marginTop: 30,
+            {selection === 1 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -74,7 +75,7 @@ const LineChartScene = () => {
                     <LineChartSDK height={'650px'} width={'1430px'} chartId={`${mainChart}`} ></LineChartSDK>
                 </Col>
             </Row>}
-            {selection === 2 && <Row style={{marginTop: 30,
+            {selection === 2 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -87,7 +88,7 @@ const LineChartScene = () => {
                     <LineChartSDK height={'650px'} width={'1430px'} chartId={`${secondChart}`}></LineChartSDK>
                 </Col>
             </Row>}
-            {selection === 3 && <Row style={{marginTop: 30,
+            {selection === 3 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",

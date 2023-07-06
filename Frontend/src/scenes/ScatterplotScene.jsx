@@ -62,39 +62,39 @@ const ScatterplotScene = () => {
                         height: 60
                         }}>
                 <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Overview</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Speed Distribution by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Duration by Distance</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>attery Deviation by distance</Button>
                     </Form>
 
             </Row>
 
 
 
-            {selection === 1 && <Row style={{marginTop: 30,
-                        marginBottom: 100,
+            {selection === 1 && <Row style={{marginTop: 10,
+                        marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
-                        width: 1300,
+                        width: 1450,
                         height: 700
                         }}>
                 <Col>
-                    <DescriptiveChartSDK height={'650px'} width={'1250px'} chartId={`${mainScatter}`}></DescriptiveChartSDK>
+                    <DescriptiveChartSDK height={'680px'} width={'1430px'} chartId={`${mainScatter}`}></DescriptiveChartSDK>
                 </Col>
             </Row>}
 
-            {selection === 2 && <Row style={{marginTop: 30,
-                        marginBottom: 100,
+            {selection === 2 && <Row style={{marginTop: 10,
+                        marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
-                        width: 1300,
+                        width: 1450,
                         height: 700
                         }}>
                 <Col>
-                    <DescriptiveChartSDK height={'650px'} width={'1250px'} chartId={`${secondScatter}`}></DescriptiveChartSDK>
+                    <DescriptiveChartSDK height={'680px'} width={'1430px'} chartId={`${secondScatter}`}></DescriptiveChartSDK>
                 </Col>
             </Row>}
 

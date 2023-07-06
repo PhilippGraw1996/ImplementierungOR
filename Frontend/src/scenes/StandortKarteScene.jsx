@@ -67,7 +67,7 @@ const StandortKarteScene = () => {
 
             </Row>
 
-            {selection === 1 && <Row style={{marginTop: 30,
+            {selection === 1 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -81,7 +81,7 @@ const StandortKarteScene = () => {
                 </Col>
             </Row>}
 
-            {selection === 2 && <Row style={{marginTop: 30,
+            {selection === 2 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -95,7 +95,7 @@ const StandortKarteScene = () => {
                 </Col>
             </Row>}
 
-            {selection === 3 && <Row style={{marginTop: 30,
+            {selection === 3 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",

@@ -21,50 +21,50 @@ import standOrtKarte from "../Images/StandOrtKarteFinal.jpg";
 const SubKacheln = () => {
     const renderArray = [
         {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Piechart",
+            "shortText": "The Piecharts show the aggregated amount of trips by several Categories.",
+            "cardHeading": "Piecharts",
             "index": 2,
             "image": pie,
             "DetailPageLink": "/pieChart"
         }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Barchart",
+            "shortText": "The barcharts give a first sense of the distribution of the e-scooter metrics by different metrics.",
+            "cardHeading": "Barcharts",
             "index": 3,
             "image": bar,
             "DetailPageLink": "/barChart"
         }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Graph's",
+            "shortText": "The linegraph's show the (aggregated) amount of scooter trips over the time.",
+            "cardHeading": "Graphs",
             "index": 4,
             "image": line,
             "DetailPageLink": "/lineChart"
         }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Location Map",
+            "shortText": "The location map offers the possibility to analyse locations of the scooters.",
+            "cardHeading": "Location Maps",
             "index": 5,
             "image": standOrtKarte,
             "DetailPageLink": "/locationMap"
         }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Parrallel",
+            "shortText": "The barcharts give a first sense of the distribution of the e-scooter metrics by different metrics.",
+            "cardHeading": "Barcharts",
             "index": 8,
-            "image": parallel,
-            "DetailPageLink": "/parallelLines"
+            "image": bar,
+            "DetailPageLink": "/BarChartSceneHorizontal"
         }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Heatmap",
+            "shortText": "The heatmaps give a borad overview over the density of several metrics.",
+            "cardHeading": "Heatmap tables",
             "index": 9,
             "image": heatMap,
             "DetailPageLink": "/heatmapCrossTab"
         }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
+            "shortText": "The geo heatmap gives an overview over the start and end locations of scooter Trips.",
             "cardHeading": "Geo Heatmap",
             "index": 10,
             "image": heatMapKarte,
             "DetailPageLink": "/heatmapLocation"
         }, {
-            "shortText": "Die Standort Analyse bietet die Möglichkeit häufig frequentiert Abstellplätze und stark frequentierte Routen ausfindig zu machen.",
-            "cardHeading": "Areachart",
+            "shortText": "The areacharts show ",
+            "cardHeading": "Areacharts",
             "index": 11,
             "image": area,
             "DetailPageLink": "/areaDiagram"

@@ -66,31 +66,31 @@ const AreaDiagram = () => {
 
             </Row>
 
-            {selection === 1 && <Row style={{marginTop: 30,
+            {selection === 1 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 1450,
-                        height: 750
+                        height: 700
                         }}>
                 <Col>
-                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${mainChart}`}></LineChartSDK>
+                    <LineChartSDK height={'680px'} width={'1430px'} chartId={`${mainChart}`}></LineChartSDK>
                 </Col>
 
             </Row>} 
-            {selection === 2 && <Row style={{marginTop: 30,
+            {selection === 2 && <Row style={{marginTop: 10,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 1450,
-                        height: 750
+                        height: 700
                         }}>
                 <Col>
-                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${secondChart}`} ></LineChartSDK>
+                    <LineChartSDK height={'680px'} width={'1430px'} chartId={`${secondChart}`} ></LineChartSDK>
                 </Col>
 
             </Row>}                    <Row style={{marginTop: 10,

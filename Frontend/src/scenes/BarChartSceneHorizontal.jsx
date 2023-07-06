@@ -69,7 +69,7 @@ const BarChartSceneHorizontal = () => {
             </Row>
 
             {selection === 1 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 10,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -84,7 +84,7 @@ const BarChartSceneHorizontal = () => {
                         
                     </Row>}
                     {selection === 2 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 10,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -99,7 +99,7 @@ const BarChartSceneHorizontal = () => {
                     </Row>}
 
                     {selection === 3 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 10,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -115,7 +115,7 @@ const BarChartSceneHorizontal = () => {
 
 
                     {selection === 4 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 10,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
@@ -131,7 +131,7 @@ const BarChartSceneHorizontal = () => {
 
 
                     {selection === 5 &&            
-                     <Row style={{marginTop: 20,
+                     <Row style={{marginTop: 10,
                         marginBottom: 10,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
