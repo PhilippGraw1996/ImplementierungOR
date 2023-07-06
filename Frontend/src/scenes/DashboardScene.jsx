@@ -10,7 +10,7 @@ import ChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 const DashboardScene = (props) => {
 
-    const table = '649ff1b0-e5b0-42a4-8f29-c2474beec06a';
+    const table = '64a1c81b-e837-4122-8261-ef54e13ca341';
     const pie1 = '649dfacb-b269-4702-8689-1fa3130bc4b3';
     const pie2 = '649dfc19-e5b0-4467-8dd8-c2474b93d45f';
     const pie3 = '649dfb81-d8a7-4814-883e-650d4f42f0e2';
@@ -68,7 +68,7 @@ const DashboardScene = (props) => {
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>  <ChartSDK height={'280px'} width={'400px'} filter={{"dayOfWeek": {$gte: 3}}} chartId={`${pie1}`}></ChartSDK>
+                        }}>  <ChartSDK height={'280px'} width={'400px'} chartId={`${pie1}`}></ChartSDK>
                             
                         </Col>
                 <Col style={{marginTop: 0,

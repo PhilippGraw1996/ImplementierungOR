@@ -55,9 +55,9 @@ const LineChartScene = () => {
                         height: 60
                         }}>
                     <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Cumulative view</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Absolut amount of Trips</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Absolut amount of Trips Bar</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Cumulative total amount of Trips over time</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Absolut amount of trips over time</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Barchart absolut amount of trips by month</Button>
                     </Form>
 
             </Row>
@@ -72,7 +72,8 @@ const LineChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${mainChart}`} ></LineChartSDK>
+                    <LineChartSDK height={'650px'} width={'1430px'} filter={{$and:[{"newClock": {$gte: new Date(startDate)}}, {"newClock": {$lte: new Date(endDate)}}]}} chartId={`${mainChart}`} ></LineChartSDK>
+                    {console.log(startDate.toISOString())}
                 </Col>
             </Row>}
             {selection === 2 && <Row style={{marginTop: 10,
@@ -86,6 +87,7 @@ const LineChartScene = () => {
                         }}>
                 <Col>
                     <LineChartSDK height={'650px'} width={'1430px'} chartId={`${secondChart}`}></LineChartSDK>
+                    {console.log(startDate.toISOString())}
                 </Col>
             </Row>}
             {selection === 3 && <Row style={{marginTop: 10,
@@ -185,3 +187,8 @@ const LineChartScene = () => {
 }
 
 export default LineChartScene;
+
+
+// filter={{$and:[{"newClock": {$gte: "2020-03-16T16:25:00.000+00:00"}}, {"newClock": {$lte: "2020-05-16T16:25:00.000+00:00"}}]}}
+
+// filter={{$and:[{"newClock": {$gte: startDate.toISOString()}}, {"newClock": {$lte: endDate.toISOString()}}]}}

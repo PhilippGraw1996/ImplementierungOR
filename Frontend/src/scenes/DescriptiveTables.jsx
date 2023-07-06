@@ -14,7 +14,7 @@ const DashboardScene = () => {
     const fourthDesc = '64a00d05-356a-409d-868e-d48f3f49a5f8';
     const firstNumber = '649ff1b0-e5b0-49e5-8bb3-c2474beec05e';
     const secondNumber = '649ff1b0-e5b0-4833-82c8-c2474beec062';
-    const table = '649ff1b0-e5b0-42a4-8f29-c2474beec06a';
+    const table = '64a1c81b-e837-4122-8261-ef54e13ca341';
 
     return(
         <Container style={{marginTop: 100, marginBottom: 200}}>

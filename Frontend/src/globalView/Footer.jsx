@@ -9,7 +9,7 @@ const Footer = () => (
       <Row className="position-relative w-100">
         <Col className="d-flex justify-content-center col-1" >
           <NavLink>
-            Datenschutz
+            Data security 
           </NavLink>
         </Col>
         <Col className="d-flex justify-content-center col-1" >

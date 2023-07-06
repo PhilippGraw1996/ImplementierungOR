@@ -21,7 +21,7 @@ const Header = () => {
                     </NavbarBrand>
                 </Col>
                 <Col className="d-flex justify-content-start col-7">
-                    <h1 className="display-6" style={{paddingLeft: 15}}>E-Scooter Datenanalyse LUH</h1>
+                    <h1 className="display-6" style={{paddingLeft: 15}}>E-Scooter Data Analysis LUH</h1>
                 </Col>
 
                 <Col className="d-flex justify-content-end col-4">

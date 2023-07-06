@@ -22,26 +22,46 @@ const HomeBanner = () => {
   
           <div style={{position: "absolute", top: "20px", left: "10%", right: "10%"}}>
   
-            <h1 style={{color: "white"}} data-testid="headline">Scooter</h1>
+            <h1 style={{color: "white"}} data-testid="headline">Scooter analysis Project</h1>
             <Carousel>
               <Carousel.Item>
-                <h2 style={{color: "white"}}>Analyse Tools</h2>
+                <h2 style={{color: "white"}}>Analysis tools</h2>
                 <h5 style={{color: "white"}}>
-                  Die Heatmap:
+                  Geo Heatmaps
                 </h5>
                 <h5 style={{color: "white"}}>
-                  Dynamische Dashboards:
+                  Dynamic Dashboards
                 </h5>
                 <h5 style={{color: "white"}}>
-                  Standort Verfolgung:
+                  Location Maps
+                </h5>
+                <h5 style={{color: "white"}}>
+                  Barcharts
+                </h5>
+                <h5 style={{color: "white"}}>
+                  Graphs
+                </h5>
+                <h5 style={{color: "white"}}>
+                  Areacharts
+                </h5>
+                <h5 style={{color: "white"}}>
+                  Heatmap Tables
+                </h5>
+                <h5 style={{color: "white"}}>
+                  Piecharts
+                </h5>
+                <h5 style={{color: "white"}}>
+                  Descriptive Manual queries
                 </h5>
               </Carousel.Item>
               <Carousel.Item>
-                <h2 style={{color: "white"}}>Ziel des Projektes</h2>
+                <h2 style={{color: "white"}}>Goal of the Project</h2>
                 <h5 style={{color: "white"}}>
-                  Das Ziel der Hausarbeit ist es, eine funktionsfähige WebPage für die Analyse der E-Scooter Daten von 
-                  mobilen E-Scootern in und um Hannover bereitzustellen. Die Website umfasst verschiedene Analyse Tools: 
-                  Heatmaps, Standortverfolgung, dynamische Dashboards.
+                  The goal of the project is to create a webbapplication that offers the necessary tools to analyse a dataset of
+                  roughly 600.000 e-Scooter strips in Berlin. The dataset contains trips in the time period of september 2019 until october 2020. 
+                  The dataset shows trips of 10.724 different e-Scooters. 
+                  This website offers the necessary tools that are needed, to get a first visual overview over the dataset and furthemore offers necessary queries
+                  to adjust the graphs and bars to retrieve the needed insides over the data.
                 </h5>
               </Carousel.Item>
             </Carousel>

@@ -22,7 +22,17 @@ const getDescendingTripsByCategory = async(req, res) => {
     console.log(amount);
     
     //const resultTrips = await Trips.find({code: 224807}, {code: 1, duration: 1, distance_osrm: 1, batteryDeviation: 1, speed: 1}).sort({[category]: order}).limit(amount);
-    const resultTrips = await Trips.find({}, {code: 1, duration: 1, distance_osrm: 1, batteryDeviation: 1, speed: 1}).sort({[category]: order}).limit(amount);
+    const resultTrips = await Trips.find(code ? {code: scooterCode} : {}, {code: 1, duration: 1, distance_osrm: 1, batteryDeviation: 1, speed: 1}).sort({[category]: order}).limit(amount);
+    res.status(200).json(resultTrips);
+
+}
+
+// Get All Trips by Code
+const getDescendingTripsByCode = async(req, res) => {
+    const scooterCode = req.params.code;
+    console.log(scooterCode);
+
+    const resultTrips = await Trips.find({code: scooterCode}, {code: 1, duration: 1, distance_osrm: 1, batteryDeviation: 1, speed: 1}).sort({"duration": -1}).limit(5);
     res.status(200).json(resultTrips);
 }
 
@@ -57,5 +67,6 @@ const getSingleTrip = async(req, res) => {
 module.exports = {
     getAllTrips,
     getSingleTrip,
-    getDescendingTripsByCategory
+    getDescendingTripsByCategory,
+    getDescendingTripsByCode
 }

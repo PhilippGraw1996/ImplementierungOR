@@ -61,9 +61,9 @@ const BarChartSceneHorizontal = () => {
                     <Form onSubmit={submitHandler}>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Overview</Button>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Speed Distribution by Hour</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Trip Duration Distribution by Weekday</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(4)}>Batterydeviation Distribution by Weekday</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(5)}>Distance Distribution by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Trip Duration Distribution by Hour</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(4)}>Batterydeviation Distribution by Hour</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(5)}>Distance Distribution by Hour</Button>
                     </Form>
 
             </Row>

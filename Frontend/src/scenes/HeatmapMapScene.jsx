@@ -62,9 +62,9 @@ const HeatMapScene = () => {
                         height: 60
                         }}>
                     <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Amount of Trips by Weekday</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Amount of Trips by Hour of Day</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Amount of Trips by Hour of Day</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Heatmap by start locations of trips</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Heatmap by end locations of trips</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Heatmaps by start and end locations: weekdays 07:00 am - 09:00 am</Button>
                     </Form>
 
             </Row>

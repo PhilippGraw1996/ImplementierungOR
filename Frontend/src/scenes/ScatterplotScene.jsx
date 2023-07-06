@@ -63,7 +63,7 @@ const ScatterplotScene = () => {
                         }}>
                 <Form onSubmit={submitHandler}>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Duration by Distance</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>attery Deviation by distance</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Batterydeviation by distance</Button>
                     </Form>
 
             </Row>

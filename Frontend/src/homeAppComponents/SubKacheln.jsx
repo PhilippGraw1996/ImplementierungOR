@@ -63,7 +63,7 @@ const SubKacheln = () => {
             "image": heatMapKarte,
             "DetailPageLink": "/heatmapLocation"
         }, {
-            "shortText": "The areacharts show ",
+            "shortText": "The areacharts show the amount of trips in dependency of the hour of the day.",
             "cardHeading": "Areacharts",
             "index": 11,
             "image": area,

@@ -31,19 +31,20 @@ const QuerieResultsByScooter = () => {
     const [displayOrder, setDisplayOrder] = useState("descending");
     const [code, setCode] = useState(0);
 
+
     const submitHandlerFilter = (e) => {
         e.preventDefault();
         setCategory(chosenCategory);
         setAmount(chosenAmount);
         setDisplayOrder(chosenOrder);
-        setCode(chosenCode);
     };
 
     const [scooter, setScooter] = useState(null);
+    const [scooterByCode, setScooterCode] = useState(null);
 
     useEffect(() => {
         const fetchScooters = async () => {
-            const response = await fetch(`/api/scooters/descByCat/${category}/${amount}/${displayOrder}/${code}`);
+            const response = await fetch(`/api/scooters/descByCat/${category}/${amount}/${displayOrder}`);
             const json = await response.json();
         
 
@@ -52,7 +53,26 @@ const QuerieResultsByScooter = () => {
             }
         }
         fetchScooters();
-    }, [category, amount, displayOrder, code])
+    }, [category, amount, displayOrder])
+
+
+    const submitCodeHandler = (e) => {
+        e.preventDefault();
+        setCode(chosenCode);
+    }
+
+    useEffect(() => {
+        const fetchScooters = async () => {
+            const response = await fetch(`/api/scooters/${code}`);
+            const json = await response.json();
+        
+
+            if (response.ok){
+                setScooterCode(json);
+            }
+        }
+        fetchScooters();
+    }, [code])
 
 /* --------------------------------------------------------------------------------*/
 
@@ -75,7 +95,7 @@ const QuerieResultsByScooter = () => {
                     
                     <form onSubmit={submitHandlerFilter}>
                         <h3>Change Query Parameter</h3>
-                        <p>This Menu offers the possibility to run queries based on category you want to sort the results be in either descending or ascending order. If known you can further narrow down the results by filtering for specific scooter Codes.</p>
+                        <p>This Menu offers the possibility to run queries based on category you want to sort the results be in either descending or ascending order.</p>
 
                         <Row style={{marginTop: 25}}>
                             <Col>
@@ -115,17 +135,7 @@ const QuerieResultsByScooter = () => {
                                 value={chosenAmount}
                             />
                             </Col>
-                            <Col style={{marginLeft: 30}}> 
-                                <h4>Scooter Code</h4>
-                                <label>If known, enter a Scooter Code to filter by Code and only retrieve values of a certain Scooter:</label>
-                                <input
-                                    style={{margintTop : 20}}
-                                    id="scooterCode"
-                                    type='number'
-                                    onChange={(e) => setChosenCode(e.target.value)}
-                                    value={chosenCode}
-                                />  
-                            </Col>
+
 
                             <Row style={{marginTop:15, marginBottom: 100}}>
                                 <Col>
@@ -157,13 +167,75 @@ const QuerieResultsByScooter = () => {
                     </Col>
                 ))}
             </Row>
+
         </Container>
     )
 }
 
 export default observer(QuerieResultsByScooter);
 
+/*
 
+
+            <Row style={{marginTop: 20,
+                        marginBottom: 10,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1320,
+                        height: 150
+                        }}>
+                    
+                    
+                    <form onSubmit={submitCodeHandler}>
+                        <h3>Change Query Parameter - Filter by Scooter Code</h3>
+                        <Row style={{marginTop: 15}}>
+                            <Col style={{marginLeft: 0}}> 
+                                <label>If known, enter a Scooter Code to filter by Code and only retrieve values of a certain Scooter:</label>
+                                <input
+                                    style={{margintTop : 20, marginLeft:20}}
+                                    id="scooterCode"
+                                    type='number'
+                                    onChange={(e) => setChosenCode(e.target.value)}
+                                    value={chosenCode}
+                                />  
+                            </Col>
+
+                            <Row style={{marginTop:15, marginBottom: 100}}>
+                                <Col>
+                                    <Button onClick={submitCodeHandler} type="submit">Submit changes</Button>
+                                </Col>
+                            </Row>
+                        </Row>
+                    </form>
+            </Row>
+
+            <Row xs={1} sm={2} md={3} lg={3} className="p-2 g-5" >
+                {scooterByCode && scooterByCode.map((scooter, index) => (
+                    <Col key={scooter.id}>
+                    <div>
+                        <div className={"classes.card__front"}>
+                        <Card style={{ height: '15rem'}} >
+                            <Card.Body>
+                                <Card.Title className={"classes.card__title"} >
+                                <h2 style={{color: "black", textDecoration: "none"}}>{`Scooter Code: ${scooter.code}`}</h2>
+                                </Card.Title>
+                                <Card.Text className={"classes.card__subtitle"}>{`Distance: ${scooter.distance_osrm} meter`}</Card.Text>
+                                <Card.Text className={"classes.card__subtitle"}>{`Duration: ${scooter.duration} minutes`}</Card.Text>
+                                <Card.Text className={"classes.card__subtitle"}>{`Battery Deviation: ${scooter.batteryDeviation} %`}</Card.Text>
+                                <Card.Text className={"classes.card__subtitle"}>{`Average Speed: ${scooter.speed} km/h`}</Card.Text>
+                            </Card.Body>
+                        </Card>
+                        </div>
+                    </div>
+                    </Col>
+                ))}
+            </Row>
+
+            <p>{chosenCode}</p>
+
+*/ 
 
 /*            
             <Dropdown>

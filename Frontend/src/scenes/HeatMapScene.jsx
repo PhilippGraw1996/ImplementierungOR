@@ -57,9 +57,9 @@ const HeatMapScene = () => {
                         height: 60
                         }}>
                     <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Overview</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Speed Distribution by Weekday</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Amount of Trips over Time</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Heatmap Overview trip frequency Weekday/Hour</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Battery Deviation by Distance</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Trip frequency by weekday over time</Button>
                     </Form>
 
             </Row>

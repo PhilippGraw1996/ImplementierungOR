@@ -74,7 +74,8 @@ const PieChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <PieChartSDK height={'680px'} width={'1250px'} filter={{"dayOfWeek": {$gte: tryout}}} chartId={'649dfacb-b269-4702-8689-1fa3130bc4b3'}></PieChartSDK>
+                    {console.log(typeof chosenStartDay)}
+                    <PieChartSDK height={'680px'} width={'1250px'} filter={{$and: [{"dayOfWeek": {$gte: chosenStartDay}}, {"dayOfWeek": {$lte: chosenEndDay}}, {"newClock": {$gte: startDate.toISOString()}}, {"newClock": {$lte: endDate.toISOString()}}]}} chartId={'64a1c81b-e837-4ad9-8016-ef54e13ca33b'}></PieChartSDK>
                 </Col>
             </Row>
             }
@@ -152,7 +153,7 @@ const PieChartScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputStart"
                                 type='number'
-                                onChange={(e) => setChosenStartDay(e.target.value)}
+                                onChange={(e) => setChosenStartDay(parseInt(e.target.value, 10))}
                                 value={chosenStartDay}
                             />                      
                             <hr></hr>
@@ -162,7 +163,7 @@ const PieChartScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenStartHour(e.target.value)}
+                                onChange={(e) => setChosenStartHour(parseInt(e.target.value, 10))}
                                 value={chosenStartHour}
                             />
                         </Col>
@@ -173,7 +174,7 @@ const PieChartScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndDay(e.target.value)}
+                                onChange={(e) => setChosenEndDay(parseInt(e.target.value, 10))}
                                 value={chosenEndDay}
                             />
                             <hr></hr>
@@ -183,7 +184,7 @@ const PieChartScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndHour(e.target.value)}
+                                onChange={(e) => setChosenEndHour(parseInt(e.target.value, 10))}
                                 value={chosenEndHour}
                             />
                             

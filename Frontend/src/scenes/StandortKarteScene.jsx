@@ -24,6 +24,8 @@ const StandortKarteScene = () => {
     const [filterDate, setFilterDateStart] = useState([new Date("2019-01-01"), new Date("2021-12-31")]);
     const [dayOfWeekFilter, setDayOfWeekFilter] = useState([0, 6]);
 
+    const [chosenCode, setChosenCode] = useState(224807);
+
     const [hourOfDayFilter, setHourOfDayFilter] = useState([0, 23]);
 
     const [selection, setSelection] = useState(1);
@@ -60,9 +62,9 @@ const StandortKarteScene = () => {
                         height: 60
                         }}>
                     <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Amount of Trips by Weekday</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Amount of Trips by Hour of Day</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Amount of Trips by Hour of Day</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Geo Scatter by end location</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Geo Scatter by start location</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Geo Scatter - Single Scooter Movement</Button>
                     </Form>
 
             </Row>
@@ -102,10 +104,21 @@ const StandortKarteScene = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 1450,
-                        height: 700
+                        height: 800
                         }}>
                 <Col>
-                    <LocationChartSDK height={'680px'} width={'1430px'} chartId={`${locationMapSingle}`}></LocationChartSDK>
+                    <LocationChartSDK height={'680px'} width={'1430px'} filter={{"code": chosenCode}} chartId={`${locationMapSingle}`}></LocationChartSDK>
+                </Col>
+                <Col>
+                <h4>Day of Week Start</h4>              
+                            <label>Choose the Code of the Scooter you are interested in: </label>
+                            <input
+                                style={{marginLeft:20, marginTop: 10}}
+                                id="amountInputStart"
+                                type='number'
+                                onChange={(e) => setChosenCode(e.target.value)}
+                                value={chosenCode}
+                            />   
                 </Col>
             </Row>}
 
