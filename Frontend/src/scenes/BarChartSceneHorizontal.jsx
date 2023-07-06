@@ -17,19 +17,23 @@ const BarChartSceneHorizontal = () => {
     const [chosenStartHour, setChosenStartHour] = useState(0);
     const [chosenEndHour, setChosenEndHour] = useState(23);
 
-    const [filterDates, setFilterDates] = useState([new Date("2019-01-01"), new Date("2021-12-31")]);
+    const [filterDate, setFilterDateStart] = useState([new Date("2019-01-01"), new Date("2021-12-31")]);
     const [hourOfDayFilter, setHourOfDayFilter] = useState([0, 23]);
 
 
     const [selection, setSelection] = useState(1);
 
-    const submitHandler = (e) => {
+    const submitHandlerFilter = (e) => {
         e.preventDefault();
-        setFilterDates([startDate, endDate]);
+        setFilterDateStart([startDate, endDate]);
+
         setHourOfDayFilter([chosenStartHour, chosenEndHour]);
+
+        console.log("Hi Mates!")
+        console.log(hourOfDayFilter);
     }
 
-    const submitHandlerFilter = (e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
 
     }
@@ -53,7 +57,8 @@ const BarChartSceneHorizontal = () => {
                         width: 1450,
                         height: 60
                         }}>
-                <Form onSubmit={submitHandler}>
+
+                    <Form onSubmit={submitHandler}>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Overview</Button>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Speed Distribution by Hour</Button>
                         <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Trip Duration Distribution by Weekday</Button>
@@ -147,11 +152,11 @@ const BarChartSceneHorizontal = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 1450,
-                        height: 450
+                        height: 440
                         }}>
                     
                     
-                    <Form onSubmit={submitHandlerFilter}>
+                    <form onSubmit={submitHandlerFilter}>
                         <h3>Change Query Parameter</h3>
                         <p>This Menu offers the possibility to run filters to specify the graphs further. To submit your changes, click the button below.</p>
 
@@ -201,14 +206,40 @@ const BarChartSceneHorizontal = () => {
 
                             <Row style={{marginTop:10, marginBottom: 100}}>
                                 <Col>
-                                    <Button type="submit" style={{}}>Submit changes</Button>
+                                    <Button onClick={submitHandlerFilter} type="submit">Submit changes</Button>
                                 </Col>
                             </Row>
                         </Row>
-                    </Form>
+                    </form>
+                    <p>{`StartDate: ${filterDate[0]}`}</p>
+                    <p>{`StartDate: ${filterDate[1]}`}</p>
+                    <p>{`Start Hour of Day Filter: ${hourOfDayFilter[0]}`}</p>
+                    <p>{`End Hour of Day Filter: ${hourOfDayFilter[1]}`}</p>
+                    <p>{`${startDate}`}</p>
+                    <p>{`${endDate}`}</p>
+                    <p>{chosenStartHour}</p>
+                    <p>{chosenEndHour}</p>
+                    <p>.</p>
+                    <p>.</p>
             </Row>
         </Container>
     );
 }
 
 export default BarChartSceneHorizontal;
+
+
+
+
+/*
+
+
+                <Form onSubmit={submitHandler}>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Overview</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Speed Distribution by Hour</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Trip Duration Distribution by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(4)}>Batterydeviation Distribution by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(5)}>Distance Distribution by Weekday</Button>
+                    </Form>
+
+*/ 

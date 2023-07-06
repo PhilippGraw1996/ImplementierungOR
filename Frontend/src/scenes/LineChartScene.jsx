@@ -3,14 +3,14 @@ import {useState} from 'react';
 
 import LineChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
-import {Form, FormControl, FormGroup, FormLabel, Row} from 'react-bootstrap';
+import {Form, Row} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
 import 'react-datepicker/dist/react-datepicker.css';
 
+import DatePicker from "react-datepicker";
 
-import lineImage from '../Images/lineTop.jpg';
 
 
 const LineChartScene = () => {
@@ -19,107 +19,165 @@ const LineChartScene = () => {
     const secondChart = '649fe631-84f0-4aa6-8a7e-a5891ecb6175';
     const thirdChart = '649fe631-84f0-4aa6-8a7e-a5891ecb6175';
 
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
+    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
 
-    const [submitStartDate, setSubmitStartDate] = useState(new Date());
-    const [submitEndDate, setSubmitEndDate] = useState(new Date());
+    const [chosenStartHour, setChosenStartHour] = useState(0);
+    const [chosenEndHour, setChosenEndHour] = useState(6);
 
-    let graphDates = [];
+    const [filterDate, setFilterDateStart] = useState([new Date("2019-01-01"), new Date("2021-12-31")]);
+    const [dayOfWeekFilter, setDayOfWeekFilter] = useState([0, 6]);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(startDate, endDate)
-        setSubmitStartDate(startDate);
-        setSubmitEndDate(endDate);
-        graphDates = [submitStartDate, submitEndDate];
-        console.log(graphDates);
+
+    const [selection, setSelection] = useState(1);
+
+    const submitHandlerFilter = (e) => {
+        e.preventDefault();
+        setFilterDateStart([startDate, endDate]);
+        setDayOfWeekFilter([chosenStartHour, chosenEndHour]);
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+
     }
 
     return(
         <Container className="min-vh-100 pb-5" style={{marginTop: 100}}>
-            <Row>
-                <Col>
-                    <Form onSubmit={handleSubmit}>
-                        <h1>Line Graph Dashboard</h1>
-                        <Row style={{marginTop: 20}}>
-                            <h3>Time of the Week:</h3>
-                            <FormGroup className={'col'}>
-                                <FormLabel></FormLabel>
-                                <Button>Wochentage</Button>
-                            </FormGroup>
-                            <FormGroup className={'col'}>
-                                <FormLabel></FormLabel>
-                                <Button>Wochenende</Button>
-                            </FormGroup>
-                            <Col></Col>
-                            <Col></Col>
-                        </Row>
-                        <Row style={{marginTop: 20}}>
-                            <h3>Time of the Day:</h3>
-                            <FormGroup className={'col'}>
-                                <FormLabel></FormLabel>
-                                <Button>Start Time</Button>
-                            </FormGroup>
-                            <FormGroup className={'col'}>
-                                <FormLabel></FormLabel>
-                                <Button>End Time</Button>
-                            </FormGroup>
-                            <Col></Col>
-                            <Col></Col>
-                        </Row>
-                        <Row style={{marginTop: 40}}>
-                            <Col>
-                                <Button type="submit">
-                                    Graphen generieren!
-                                </Button>
-                            </Col>
-                        </Row>
+            <h1>Linecharts</h1>
+            <Row style={{marginTop: 10,
+                        marginBottom: 0,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1450,
+                        height: 60
+                        }}>
+                    <Form onSubmit={submitHandler}>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Overview</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Speed Distribution by Weekday</Button>
                     </Form>
-                </Col>
-                <Col>
-                    <Row>
-                        
-                    </Row>
-                </Col>
+
             </Row>
-            <h1>Line Chart View - Scooter Data</h1>
-            <Col style={{marginTop: 30,
-                        marginBottom: 100,
+
+            {selection === 1 && <Row style={{marginTop: 30,
+                        marginBottom: 0,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        borderRadius: "5px",
-                        width: 1300,
+                        borderRadius: 10,
+                        width: 1450,
                         height: 700
                         }}>
-                <Row>
-                    <LineChartSDK height={'650px'} width={'1250px'} chartId={`${mainChart}`} ></LineChartSDK>
-                </Row>
-            </Col>
-            <Col style={{marginTop: 30,
-                        marginBottom: 100,
+                <Col>
+                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${mainChart}`} ></LineChartSDK>
+                </Col>
+            </Row>}
+            {selection === 2 && <Row style={{marginTop: 30,
+                        marginBottom: 0,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        borderRadius: "5px",
-                        width: 1300,
+                        borderRadius: 10,
+                        width: 1450,
                         height: 700
                         }}>
-                <Row>
-                    <LineChartSDK height={'650px'} width={'1250px'} chartId={`${secondChart}`}></LineChartSDK>
-                </Row>
-            </Col>
-            <Col style={{marginTop: 30,
-                        marginBottom: 100,
+                <Col>
+                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${secondChart}`}></LineChartSDK>
+                </Col>
+            </Row>}
+            {selection === 3 && <Row style={{marginTop: 30,
+                        marginBottom: 0,
                         borderWidth: 1,
+                        borderColor: "#C8C8C8",
                         borderStyle: "solid",
-                        borderRadius: "5px",
-                        width: 1300,
+                        borderRadius: 10,
+                        width: 1450,
                         height: 700
                         }}>
-                <Row>
-                    <LineChartSDK height={'650px'} width={'1250px'} chartId={`${thirdChart}`} ></LineChartSDK>
-                </Row>
-            </Col>
+                <Col>
+                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${thirdChart}`} ></LineChartSDK>
+                </Col>
+            </Row>}
+
+            <Row style={{marginTop: 10,
+                        marginBottom: 100,
+                        borderWidth: 1,
+                        borderColor: "#C8C8C8",
+                        borderStyle: "solid",
+                        borderRadius: 10,
+                        width: 1450,
+                        height: 440
+                        }}>
+                    
+                    
+                    <form onSubmit={submitHandlerFilter}>
+                        <h3>Change Query Parameter</h3>
+                        <p>This Menu offers the possibility to run filters to specify the graphs further. To submit your changes, click the button below.</p>
+
+
+                        <Row style={{marginTop: 25}}>
+                            <Col>
+                                <h4>Start date</h4>
+                                <DatePicker
+                                    selected={startDate}
+                                    onChange={(date) => setStartDate(date)}
+                                    placeholderText="Choose Start Date!"
+                                    inline
+                                />
+                            </Col>
+                            <Col>
+                                <h4>End Date</h4>
+                                <DatePicker
+                                    selected={endDate}
+                                    onChange={(date) => setEndDate(date)}
+                                    placeholderText="Choose End Date!"
+                                    inline
+                                />
+                            </Col>
+                            <Col >  
+                            <h4>Day of Week Start</h4>              
+                            <label>Choose the start "Day of Week" for your analysis. Choose the beginning of a time period. Only values between 0 and 6 are permitted.</label>
+                            <input
+                                style={{marginLeft:0, marginTop: 10}}
+                                id="amountInputStart"
+                                type='number'
+                                onChange={(e) => setChosenStartHour(e.target.value)}
+                                value={chosenStartHour}
+                            />
+                        </Col>
+                        <Col style={{marginLeft: 30}}> 
+                            <h4>Day of Week End</h4>
+                            <label>Choose the start "Day of Week" for your analysis. Choose the end of a time period. Only values between 0 and 6 are permitted.</label>
+                            <input
+                                style={{marginLeft:0, marginTop: 10}}
+                                id="amountInputEnd"
+                                type='number'
+                                onChange={(e) => setChosenEndHour(e.target.value)}
+                                value={chosenEndHour}
+                            /></Col>
+                            <Col></Col>
+
+
+                            <Row style={{marginTop:10, marginBottom: 100}}>
+                                <Col>
+                                    <Button onClick={submitHandlerFilter} type="submit">Submit changes</Button>
+                                </Col>
+                            </Row>
+                        </Row>
+                    </form>
+                    <p>{`StartDate: ${filterDate[0]}`}</p>
+                    <p>{`StartDate: ${filterDate[1]}`}</p>
+                    <p>{`Start Hour of Day Filter: ${dayOfWeekFilter[0]}`}</p>
+                    <p>{`End Hour of Day Filter: ${dayOfWeekFilter[1]}`}</p>
+                    <p>{`${startDate}`}</p>
+                    <p>{`${endDate}`}</p>
+                    <p>{chosenStartHour}</p>
+                    <p>{chosenEndHour}</p>
+                    <p>.</p>
+                    <p>.</p>
+            </Row>
 
         </Container>
     );

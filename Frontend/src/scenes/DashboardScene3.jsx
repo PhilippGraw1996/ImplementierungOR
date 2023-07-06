@@ -98,17 +98,17 @@ const DashboardScene3 = (props) => {
 
             </Row>
             <hr></hr>
-            <Row style={{marginTop: 10,
+            <Row style={{marginTop: 20,
                         marginBottom: 0,
                         borderWidth: 1,
                         borderColor: "#C8C8C8",
                         borderStyle: "solid",
                         borderRadius: 10,
-                        width: 1320,
+                        width: 1450,
                         height: 620
                         }}>
                 <Col>
-                    <ChartSDK height={'600px'} width={'1250px'} chartId={`${barChartUpOverviewHor}`}></ChartSDK>
+                    <ChartSDK height={'600px'} width={'1430px'} chartId={`${barChartUpOverviewHor}`}></ChartSDK>
                 </Col>
             </Row>
             <Row style={{marginTop: 10}}>
@@ -162,13 +162,9 @@ const DashboardScene3 = (props) => {
                         borderRadius: 10,
                         width: 400,
                         height: 300
-                        }}>   <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartDurationHor}`}></ChartSDK>
-                            
+                        }}>   <ChartSDK height={'280px'} width={'600px'} chartId={`${barChartDurationHor}`}></ChartSDK>        
                 </Col>
-
             </Row>
-
-
         </Container>
     );
 
