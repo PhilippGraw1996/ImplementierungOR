@@ -43,8 +43,6 @@ const ScatterplotScene = () => {
 
     const mainScatter = '649ff0b3-e5b0-4fcd-83d8-c2474bee6576';
     const secondScatter = '649ff39a-84f0-43a4-8cd0-a5891ed0ce4c';
-    const thirdScatter = '';
-    const fourthScatter = '';
 
     
 

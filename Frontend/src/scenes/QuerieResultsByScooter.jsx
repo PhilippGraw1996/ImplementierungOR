@@ -3,33 +3,29 @@ import { useEffect, useState } from 'react';
 import {observer} from "mobx-react";
 
 import Card from "react-bootstrap/Card";
-import {Form, Row} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
 import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
 
-import {useStore} from "../stores/querieStore";
 
-import DatePicker from "react-datepicker";
 
 // Setting Form Input and Querie Parameters
 
 
 const QuerieResultsByScooter = () => {
 
-    const {myDateStore} = useStore(); 
 
     // Form Data updated when Form Input changes
     const [chosenCategory, setChosenCategory] = useState('duration');
     const [chosenAmount, setChosenAmount] = useState(5);
     const [chosenOrder, setChosenOrder] = useState('descending');
-    const [chosenCode, setChosenCode] = useState(0);
 
     // Setting Form Input and Querie Parameters - Updated on OnSubmit
     const [category, setCategory] = useState('duration');
     const [amount, setAmount] = useState(5);
     const [displayOrder, setDisplayOrder] = useState("descending");
-    const [code, setCode] = useState(0);
+
 
 
     const submitHandlerFilter = (e) => {
@@ -40,7 +36,7 @@ const QuerieResultsByScooter = () => {
     };
 
     const [scooter, setScooter] = useState(null);
-    const [scooterByCode, setScooterCode] = useState(null);
+
 
     useEffect(() => {
         const fetchScooters = async () => {
@@ -54,25 +50,6 @@ const QuerieResultsByScooter = () => {
         }
         fetchScooters();
     }, [category, amount, displayOrder])
-
-
-    const submitCodeHandler = (e) => {
-        e.preventDefault();
-        setCode(chosenCode);
-    }
-
-    useEffect(() => {
-        const fetchScooters = async () => {
-            const response = await fetch(`/api/scooters/${code}`);
-            const json = await response.json();
-        
-
-            if (response.ok){
-                setScooterCode(json);
-            }
-        }
-        fetchScooters();
-    }, [code])
 
 /* --------------------------------------------------------------------------------*/
 
