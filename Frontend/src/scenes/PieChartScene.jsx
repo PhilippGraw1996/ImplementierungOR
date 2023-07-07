@@ -13,8 +13,8 @@ import DatePicker from "react-datepicker";
 
 const PieChartScene = () => {
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
 
     const [chosenStartHour, setChosenStartHour] = useState(0);
     const [chosenEndHour, setChosenEndHour] = useState(23);
@@ -43,8 +43,6 @@ const PieChartScene = () => {
         e.preventDefault();
         setSelection(e.target.value)
     }
-
-    const tryout = 5;
 
     return(
         <Container className="min-vh-100 pb-5" style={{marginTop: 100}}>
@@ -75,7 +73,7 @@ const PieChartScene = () => {
                         }}>
                 <Col>
                     {console.log(typeof chosenStartDay)}
-                    <PieChartSDK height={'680px'} width={'1250px'} filter={{$and: [{"dayOfWeek": {$gte: chosenStartDay}}, {"dayOfWeek": {$lte: chosenEndDay}}, {"newClock": {$gte: startDate.toISOString()}}, {"newClock": {$lte: endDate.toISOString()}}]}} chartId={'64a1c81b-e837-4ad9-8016-ef54e13ca33b'}></PieChartSDK>
+                    <PieChartSDK height={'680px'} width={'1250px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={'64a1c81b-e837-4ad9-8016-ef54e13ca33b'}></PieChartSDK>
                 </Col>
             </Row>
             }
@@ -91,7 +89,7 @@ const PieChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <PieChartSDK height={'680px'} width={'1250px'} chartId={'649dfc19-e5b0-4467-8dd8-c2474b93d45f'}></PieChartSDK>
+                    <PieChartSDK height={'680px'} width={'1250px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={'649dfc19-e5b0-4467-8dd8-c2474b93d45f'}></PieChartSDK>
                 </Col>
             </Row>}
 
@@ -107,7 +105,7 @@ const PieChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <PieChartSDK height={'680px'} width={'1250px'} chartId={'649dfb81-d8a7-4814-883e-650d4f42f0e2'}></PieChartSDK>
+                    <PieChartSDK height={'680px'} width={'1250px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={'649dfb81-d8a7-4814-883e-650d4f42f0e2'}></PieChartSDK>
                 </Col>
             </Row>}
 
@@ -199,7 +197,21 @@ const PieChartScene = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
+            </Row>
+        </Container>
+    );
+}
+
+export default PieChartScene;
+
+
+
+
+
+
+
+/**
+ *                  <p>{`StartDate: ${filterDate[0]}`}</p>
                     <p>{`StartDate: ${filterDate[1]}`}</p>
                     <p>{`Start Hour of Day Filter: ${dayOfWeekFilter[0]}`}</p>
                     <p>{`End Hour of Day Filter: ${dayOfWeekFilter[1]}`}</p>
@@ -209,9 +221,4 @@ const PieChartScene = () => {
                     <p>{chosenEndHour}</p>
                     <p>.</p>
                     <p>.</p>
-            </Row>
-        </Container>
-    );
-}
-
-export default PieChartScene;
+ */

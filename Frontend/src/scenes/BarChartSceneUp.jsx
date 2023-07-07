@@ -12,8 +12,8 @@ import DatePicker from "react-datepicker";
 
 const BarChartSceneUp = () => {
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
 
     const [chosenStartHour, setChosenStartHour] = useState(0);
     const [chosenEndHour, setChosenEndHour] = useState(6);
@@ -76,7 +76,7 @@ const BarChartSceneUp = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${mainBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}}  width={'1430px'} chartId={`${mainBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
                     {selection === 2 &&            
@@ -90,7 +90,7 @@ const BarChartSceneUp = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${speedBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}}  chartId={`${speedBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
 
@@ -105,7 +105,7 @@ const BarChartSceneUp = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${durationBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}}  chartId={`${durationBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
 
@@ -121,7 +121,7 @@ const BarChartSceneUp = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${batteryDevBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}}  chartId={`${batteryDevBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
 
@@ -137,7 +137,7 @@ const BarChartSceneUp = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${distanceBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}}  chartId={`${distanceBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
 
@@ -183,7 +183,7 @@ const BarChartSceneUp = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputStart"
                                 type='number'
-                                onChange={(e) => setChosenStartHour(e.target.value)}
+                                onChange={(e) => setChosenStartHour(parseInt(e.target.value), 10)}
                                 value={chosenStartHour}
                             />
                         </Col>
@@ -194,7 +194,7 @@ const BarChartSceneUp = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndHour(e.target.value)}
+                                onChange={(e) => setChosenEndHour(parseInt(e.target.value), 10)}
                                 value={chosenEndHour}
                             /></Col>
                             <Col></Col>
@@ -207,16 +207,6 @@ const BarChartSceneUp = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
-                    <p>{`StartDate: ${filterDate[1]}`}</p>
-                    <p>{`Start Hour of Day Filter: ${dayOfWeekFilter[0]}`}</p>
-                    <p>{`End Hour of Day Filter: ${dayOfWeekFilter[1]}`}</p>
-                    <p>{`${startDate}`}</p>
-                    <p>{`${endDate}`}</p>
-                    <p>{chosenStartHour}</p>
-                    <p>{chosenEndHour}</p>
-                    <p>.</p>
-                    <p>.</p>
             </Row>
 
 

@@ -19,11 +19,11 @@ const LineChartScene = () => {
     const secondChart = '64a6854e-bfd6-4f0d-8585-aed10e5d039a';
     const thirdChart = '64a6846e-bfd6-47e5-88b3-aed10e5cae23';
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
 
-    const [chosenStartHour, setChosenStartHour] = useState(0);
-    const [chosenEndHour, setChosenEndHour] = useState(6);
+    const [chosenStartDay, setChosenStartDay] = useState(0);
+    const [chosenEndDay, setChosenEndDay] = useState(6);
 
     const [filterDate, setFilterDateStart] = useState([new Date("2019-01-01"), new Date("2021-12-31")]);
     const [dayOfWeekFilter, setDayOfWeekFilter] = useState([0, 6]);
@@ -34,7 +34,7 @@ const LineChartScene = () => {
     const submitHandlerFilter = (e) => {
         e.preventDefault();
         setFilterDateStart([startDate, endDate]);
-        setDayOfWeekFilter([chosenStartHour, chosenEndHour]);
+        setDayOfWeekFilter([chosenStartDay, chosenEndDay]);
     }
 
     const submitHandler = (e) => {
@@ -72,7 +72,7 @@ const LineChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LineChartSDK height={'650px'} width={'1430px'} filter={{$and:[{"newClock": {$gte: new Date(startDate)}}, {"newClock": {$lte: new Date(endDate)}}]}} chartId={`${mainChart}`} ></LineChartSDK>
+                    <LineChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}}  chartId={`${mainChart}`} ></LineChartSDK>
                     {console.log(startDate.toISOString())}
                 </Col>
             </Row>}
@@ -86,7 +86,7 @@ const LineChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${secondChart}`}></LineChartSDK>
+                    <LineChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${secondChart}`}></LineChartSDK>
                     {console.log(startDate.toISOString())}
                 </Col>
             </Row>}
@@ -100,7 +100,7 @@ const LineChartScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LineChartSDK height={'650px'} width={'1430px'} chartId={`${thirdChart}`} ></LineChartSDK>
+                    <LineChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${thirdChart}`} ></LineChartSDK>
                 </Col>
             </Row>}
 
@@ -146,8 +146,8 @@ const LineChartScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputStart"
                                 type='number'
-                                onChange={(e) => setChosenStartHour(e.target.value)}
-                                value={chosenStartHour}
+                                onChange={(e) => setChosenStartDay(parseInt(e.target.value), 10)}
+                                value={chosenStartDay}
                             />
                         </Col>
                         <Col style={{marginLeft: 30}}> 
@@ -157,8 +157,8 @@ const LineChartScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndHour(e.target.value)}
-                                value={chosenEndHour}
+                                onChange={(e) => setChosenEndDay(parseInt(e.target.value), 10)}
+                                value={chosenEndDay}
                             /></Col>
                             <Col></Col>
 
@@ -170,16 +170,6 @@ const LineChartScene = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
-                    <p>{`StartDate: ${filterDate[1]}`}</p>
-                    <p>{`Start Hour of Day Filter: ${dayOfWeekFilter[0]}`}</p>
-                    <p>{`End Hour of Day Filter: ${dayOfWeekFilter[1]}`}</p>
-                    <p>{`${startDate}`}</p>
-                    <p>{`${endDate}`}</p>
-                    <p>{chosenStartHour}</p>
-                    <p>{chosenEndHour}</p>
-                    <p>.</p>
-                    <p>.</p>
             </Row>
 
         </Container>

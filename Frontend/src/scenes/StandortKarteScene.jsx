@@ -12,8 +12,8 @@ import DatePicker from "react-datepicker";
 
 const StandortKarteScene = () => {
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
 
     const [chosenStartHour, setChosenStartHour] = useState(0);
     const [chosenEndHour, setChosenEndHour] = useState(23);
@@ -79,7 +79,7 @@ const StandortKarteScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LocationChartSDK height={'680px'} width={'1430px'} chartId={`${locationMapEnd}`}></LocationChartSDK>
+                    <LocationChartSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={`${locationMapEnd}`}></LocationChartSDK>
                 </Col>
             </Row>}
 
@@ -93,7 +93,7 @@ const StandortKarteScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LocationChartSDK height={'680px'} width={'1430px'} chartId={`${locationMapStart}`}></LocationChartSDK>
+                    <LocationChartSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={`${locationMapStart}`}></LocationChartSDK>
                 </Col>
             </Row>}
 
@@ -107,7 +107,7 @@ const StandortKarteScene = () => {
                         height: 800
                         }}>
                 <Col>
-                    <LocationChartSDK height={'680px'} width={'1430px'} filter={{"code": chosenCode}} chartId={`${locationMapSingle}`}></LocationChartSDK>
+                    <LocationChartSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}, {"code": chosenCode}]}}  chartId={`${locationMapSingle}`}></LocationChartSDK>
                 </Col>
                 <Col>
                 <h4>Day of Week Start</h4>              
@@ -210,16 +210,6 @@ const StandortKarteScene = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
-                    <p>{`StartDate: ${filterDate[1]}`}</p>
-                    <p>{`Start Hour of Day Filter: ${dayOfWeekFilter[0]}`}</p>
-                    <p>{`End Hour of Day Filter: ${dayOfWeekFilter[1]}`}</p>
-                    <p>{`${startDate}`}</p>
-                    <p>{`${endDate}`}</p>
-                    <p>{chosenStartHour}</p>
-                    <p>{chosenEndHour}</p>
-                    <p>.</p>
-                    <p>.</p>
             </Row>
 
         </Container>

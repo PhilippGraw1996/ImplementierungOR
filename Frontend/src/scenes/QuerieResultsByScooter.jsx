@@ -89,7 +89,7 @@ const QuerieResultsByScooter = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 1320,
-                        height: 320
+                        height: 280
                         }}>
                     
                     
@@ -189,15 +189,14 @@ export default observer(QuerieResultsByScooter);
                     
                     
                     <form onSubmit={submitCodeHandler}>
-                        <h3>Change Query Parameter - Filter by Scooter Code</h3>
-                        <Row style={{marginTop: 15}}>
                             <Col style={{marginLeft: 0}}> 
+                                <h4>Scooter Code</h4> 
                                 <label>If known, enter a Scooter Code to filter by Code and only retrieve values of a certain Scooter:</label>
                                 <input
-                                    style={{margintTop : 20, marginLeft:20}}
+                                    style={{margintTop : 0, marginLeft:20}}
                                     id="scooterCode"
                                     type='number'
-                                    onChange={(e) => setChosenCode(e.target.value)}
+                                    onChange={(e) => setChosenCode(parseInt(e.target.value), 10)}
                                     value={chosenCode}
                                 />  
                             </Col>

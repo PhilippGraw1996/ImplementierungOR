@@ -15,8 +15,8 @@ import DatePicker from "react-datepicker";
 const ScatterplotScene = () => {
 
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
 
     const [chosenStartHour, setChosenStartHour] = useState(0);
     const [chosenEndHour, setChosenEndHour] = useState(6);
@@ -80,7 +80,7 @@ const ScatterplotScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <DescriptiveChartSDK height={'680px'} width={'1430px'} chartId={`${mainScatter}`}></DescriptiveChartSDK>
+                    <DescriptiveChartSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${mainScatter}`}></DescriptiveChartSDK>
                 </Col>
             </Row>}
 
@@ -94,7 +94,7 @@ const ScatterplotScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <DescriptiveChartSDK height={'680px'} width={'1430px'} chartId={`${secondScatter}`}></DescriptiveChartSDK>
+                    <DescriptiveChartSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${secondScatter}`}></DescriptiveChartSDK>
                 </Col>
             </Row>}
 
@@ -140,7 +140,7 @@ const ScatterplotScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputStart"
                                 type='number'
-                                onChange={(e) => setChosenStartHour(e.target.value)}
+                                onChange={(e) => setChosenStartHour(parseInt(e.target.value))}
                                 value={chosenStartHour}
                             />
                         </Col>
@@ -151,7 +151,7 @@ const ScatterplotScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndHour(e.target.value)}
+                                onChange={(e) => setChosenEndHour(parseInt(e.target.value))}
                                 value={chosenEndHour}
                             /></Col>
                             <Col></Col>

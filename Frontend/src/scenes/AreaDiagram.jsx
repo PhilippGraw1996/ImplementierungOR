@@ -15,8 +15,8 @@ import DatePicker from "react-datepicker";
 
 const AreaDiagram = () => {
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
 
     const [chosenStartHour, setChosenStartHour] = useState(0);
     const [chosenEndHour, setChosenEndHour] = useState(23);
@@ -76,7 +76,7 @@ const AreaDiagram = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LineChartSDK height={'680px'} width={'1430px'} chartId={`${mainChart}`}></LineChartSDK>
+                    <LineChartSDK height={'680px'} width={'1430px'} filter={{$and: [{"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${mainChart}`}></LineChartSDK>
                 </Col>
 
             </Row>} 
@@ -90,7 +90,7 @@ const AreaDiagram = () => {
                         height: 700
                         }}>
                 <Col>
-                    <LineChartSDK height={'680px'} width={'1430px'} chartId={`${secondChart}`} ></LineChartSDK>
+                    <LineChartSDK height={'680px'} width={'1430px'} filter={{$and: [{"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${secondChart}`} ></LineChartSDK>
                 </Col>
 
             </Row>}                    <Row style={{marginTop: 10,
@@ -135,7 +135,7 @@ const AreaDiagram = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputStart"
                                 type='number'
-                                onChange={(e) => setChosenStartHour(e.target.value)}
+                                onChange={(e) => setChosenStartHour(parseInt(e.target.value), 10)}
                                 value={chosenStartHour}
                             />
                         </Col>
@@ -146,7 +146,7 @@ const AreaDiagram = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndHour(e.target.value)}
+                                onChange={(e) => setChosenEndHour(parseInt(e.target.value), 10)}
                                 value={chosenEndHour}
                             /></Col>
                             <Col></Col>
@@ -159,16 +159,6 @@ const AreaDiagram = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
-                    <p>{`StartDate: ${filterDate[1]}`}</p>
-                    <p>{`Start Hour of Day Filter: ${hourOfDayFilter[0]}`}</p>
-                    <p>{`End Hour of Day Filter: ${hourOfDayFilter[1]}`}</p>
-                    <p>{`${startDate}`}</p>
-                    <p>{`${endDate}`}</p>
-                    <p>{chosenStartHour}</p>
-                    <p>{chosenEndHour}</p>
-                    <p>.</p>
-                    <p>.</p>
             </Row>
 
 

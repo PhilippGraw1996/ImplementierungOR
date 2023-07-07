@@ -11,13 +11,13 @@ import DatePicker from "react-datepicker";
 
 const BarChartSceneHorizontal = () => {
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
 
     const [chosenStartHour, setChosenStartHour] = useState(0);
     const [chosenEndHour, setChosenEndHour] = useState(23);
 
-    const [filterDate, setFilterDateStart] = useState([new Date("2019-01-01"), new Date("2021-12-31")]);
+    const [filterDate, setFilterDateStart] = useState([new Date("2019-09-01"), new Date("2020-10-31")]);
     const [hourOfDayFilter, setHourOfDayFilter] = useState([0, 23]);
 
 
@@ -26,7 +26,6 @@ const BarChartSceneHorizontal = () => {
     const submitHandlerFilter = (e) => {
         e.preventDefault();
         setFilterDateStart([startDate, endDate]);
-
         setHourOfDayFilter([chosenStartHour, chosenEndHour]);
 
         console.log("Hi Mates!")
@@ -79,7 +78,7 @@ const BarChartSceneHorizontal = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${mainBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${mainBarChart}`}></BarChartSDK>
                         </Col>
                         
                     </Row>}
@@ -94,7 +93,7 @@ const BarChartSceneHorizontal = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${speedBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${speedBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
 
@@ -109,7 +108,7 @@ const BarChartSceneHorizontal = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${durationBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} filter={{$and: [{"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} width={'1430px'} chartId={`${durationBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
 
@@ -125,7 +124,7 @@ const BarChartSceneHorizontal = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${batteryDevBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${batteryDevBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
 
@@ -141,7 +140,7 @@ const BarChartSceneHorizontal = () => {
                         height: 700
                         }}>
                         <Col>
-                            <BarChartSDK height={'650px'} width={'1430px'} chartId={`${distanceBarChart}`}></BarChartSDK>
+                            <BarChartSDK height={'650px'} width={'1430px'} filter={{$and: [{"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}]}} chartId={`${distanceBarChart}`}></BarChartSDK>
                         </Col>
                     </Row>}
 
@@ -187,7 +186,7 @@ const BarChartSceneHorizontal = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputStart"
                                 type='number'
-                                onChange={(e) => setChosenStartHour(e.target.value)}
+                                onChange={(e) => setChosenStartHour(parseInt(e.target.value))}
                                 value={chosenStartHour}
                             />
                         </Col>
@@ -198,7 +197,7 @@ const BarChartSceneHorizontal = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndHour(e.target.value)}
+                                onChange={(e) => setChosenEndHour(parseInt(e.target.value))}
                                 value={chosenEndHour}
                             /></Col>
                             <Col></Col>
@@ -211,16 +210,6 @@ const BarChartSceneHorizontal = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
-                    <p>{`StartDate: ${filterDate[1]}`}</p>
-                    <p>{`Start Hour of Day Filter: ${hourOfDayFilter[0]}`}</p>
-                    <p>{`End Hour of Day Filter: ${hourOfDayFilter[1]}`}</p>
-                    <p>{`${startDate}`}</p>
-                    <p>{`${endDate}`}</p>
-                    <p>{chosenStartHour}</p>
-                    <p>{chosenEndHour}</p>
-                    <p>.</p>
-                    <p>.</p>
             </Row>
         </Container>
     );

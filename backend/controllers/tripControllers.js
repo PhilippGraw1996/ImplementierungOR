@@ -22,7 +22,7 @@ const getDescendingTripsByCategory = async(req, res) => {
     console.log(amount);
     
     //const resultTrips = await Trips.find({code: 224807}, {code: 1, duration: 1, distance_osrm: 1, batteryDeviation: 1, speed: 1}).sort({[category]: order}).limit(amount);
-    const resultTrips = await Trips.find(code ? {code: scooterCode} : {}, {code: 1, duration: 1, distance_osrm: 1, batteryDeviation: 1, speed: 1}).sort({[category]: order}).limit(amount);
+    const resultTrips = await Trips.find(scooterCode ? {code: scooterCode} : {}, {code: 1, duration: 1, distance_osrm: 1, batteryDeviation: 1, speed: 1}).sort({[category]: order}).limit(amount);
     res.status(200).json(resultTrips);
 
 }

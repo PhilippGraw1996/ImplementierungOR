@@ -12,8 +12,8 @@ import DatePicker from "react-datepicker";
 
 const HeatMapScene = () => {
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
 
     const [chosenStartHour, setChosenStartHour] = useState(0);
     const [chosenEndHour, setChosenEndHour] = useState(23);
@@ -80,7 +80,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <HeatmapSDK height={'680px'} width={'1430px'} chartId={`${heatMapStart}`}></HeatmapSDK>
+                    <HeatmapSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={`${heatMapStart}`}></HeatmapSDK>
                 </Col>
             </Row>}
 
@@ -94,7 +94,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <HeatmapSDK height={'680px'} width={'1430px'} chartId={`${heatMapEnd}`}></HeatmapSDK>
+                    <HeatmapSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={`${heatMapEnd}`}></HeatmapSDK>
                 </Col>
             </Row>}
 
@@ -108,7 +108,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <HeatmapSDK height={'680px'} width={'1430px'} chartId={`${heatMapWorkWayFilterEnd}`}></HeatmapSDK>
+                    <HeatmapSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}}  chartId={`${heatMapWorkWayFilterEnd}`}></HeatmapSDK>
                 </Col>
             </Row>    
                 
@@ -122,7 +122,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <HeatmapSDK height={'680px'} width={'1430px'} chartId={`${heatMapWorkWayFilterStart}`}></HeatmapSDK>
+                    <HeatmapSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={`${heatMapWorkWayFilterStart}`}></HeatmapSDK>
                 </Col>
             </Row> </div>}
             <Row style={{marginTop: 10,
@@ -167,7 +167,7 @@ const HeatMapScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputStart"
                                 type='number'
-                                onChange={(e) => setChosenStartDay(e.target.value)}
+                                onChange={(e) => setChosenStartDay(parseInt(e.target.value), 10)}
                                 value={chosenStartDay}
                             />                      
                             <hr></hr>
@@ -177,7 +177,7 @@ const HeatMapScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenStartHour(e.target.value)}
+                                onChange={(e) => setChosenStartHour(parseInt(e.target.value), 10)}
                                 value={chosenStartHour}
                             />
                         </Col>
@@ -188,7 +188,7 @@ const HeatMapScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndDay(e.target.value)}
+                                onChange={(e) => setChosenEndDay(parseInt(e.target.value), 10)}
                                 value={chosenEndDay}
                             />
                             <hr></hr>
@@ -198,7 +198,7 @@ const HeatMapScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndHour(e.target.value)}
+                                onChange={(e) => setChosenEndHour(parseInt(e.target.value), 10)}
                                 value={chosenEndHour}
                             />
                             
@@ -213,16 +213,6 @@ const HeatMapScene = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
-                    <p>{`StartDate: ${filterDate[1]}`}</p>
-                    <p>{`Start Hour of Day Filter: ${dayOfWeekFilter[0]}`}</p>
-                    <p>{`End Hour of Day Filter: ${dayOfWeekFilter[1]}`}</p>
-                    <p>{`${startDate}`}</p>
-                    <p>{`${endDate}`}</p>
-                    <p>{chosenStartHour}</p>
-                    <p>{chosenEndHour}</p>
-                    <p>.</p>
-                    <p>.</p>
             </Row>
 
         </Container>

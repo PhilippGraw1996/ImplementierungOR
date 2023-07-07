@@ -15,22 +15,28 @@ import 'react-datepicker/dist/react-datepicker.css';
 const HeatMapScene = () => {
 
 
-    const [startDate, setStartDate] = useState(new Date("2019-01-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-12-31"));
+    const [startDate, setStartDate] = useState(new Date("2019-09-01"));
+    const [endDate, setEndDate] = useState(new Date("2020-10-31"));
+
+    const [chosenStartDay, setChosenStartDay] = useState(0);
+    const [chosenEndDay, setChosenEndDay] = useState(6);
 
     const [chosenStartHour, setChosenStartHour] = useState(0);
-    const [chosenEndHour, setChosenEndHour] = useState(6);
+    const [chosenEndHour, setChosenEndHour] = useState(23);
 
     const [filterDate, setFilterDateStart] = useState([new Date("2019-01-01"), new Date("2021-12-31")]);
     const [dayOfWeekFilter, setDayOfWeekFilter] = useState([0, 6]);
 
+    const [hourOfDayFilter, setHourOfDayFilter] = useState([0, 23]);
 
     const [selection, setSelection] = useState(1);
 
     const submitHandlerFilter = (e) => {
         e.preventDefault();
         setFilterDateStart([startDate, endDate]);
-        setDayOfWeekFilter([chosenStartHour, chosenEndHour]);
+        setDayOfWeekFilter([chosenStartDay, chosenEndDay]);
+        setHourOfDayFilter([chosenStartHour, chosenEndHour]);
+
     }
 
     const submitHandler = (e) => {
@@ -73,7 +79,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <HeatmapSDK height={'680px'} width={'1430px'} chartId={`${speedBarChart}`}></HeatmapSDK>
+                    <HeatmapSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={`${speedBarChart}`}></HeatmapSDK>
                 </Col>
             </Row>}
             {selection === 2 && <Row style={{marginTop: 10,
@@ -86,7 +92,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <HeatmapSDK height={'680px'} width={'1430px'} chartId={`${heatMapBattryDev}`}></HeatmapSDK>
+                    <HeatmapSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={`${heatMapBattryDev}`}></HeatmapSDK>
                 </Col>
             </Row>}
 
@@ -100,7 +106,7 @@ const HeatMapScene = () => {
                         height: 700
                         }}>
                 <Col>
-                    <HeatmapSDK height={'680px'} width={'1430px'} chartId={`${heatmapOverTime}`}></HeatmapSDK>
+                    <HeatmapSDK height={'680px'} width={'1430px'} filter={{$and: [{"dayOfWeek": {$gte: dayOfWeekFilter[0]}}, {"dayOfWeek": {$lte: dayOfWeekFilter[1]}}, {"newClock": {$gte: new Date(filterDate[0])}}, {"newClock": {$lte: new Date(filterDate[1])}}, {"hourOfDay": {$gte: hourOfDayFilter[0]}}, {"hourOfDay": {$lte: hourOfDayFilter[1]}}]}} chartId={`${heatmapOverTime}`}></HeatmapSDK>
                 </Col>
             </Row>}
 
@@ -111,7 +117,7 @@ const HeatMapScene = () => {
                         borderStyle: "solid",
                         borderRadius: 10,
                         width: 1450,
-                        height: 440
+                        height: 480
                         }}>
                     
                     
@@ -146,7 +152,17 @@ const HeatMapScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputStart"
                                 type='number'
-                                onChange={(e) => setChosenStartHour(e.target.value)}
+                                onChange={(e) => setChosenStartDay(parseInt(e.target.value), 10)}
+                                value={chosenStartDay}
+                            />
+                            <hr></hr>
+                            <h4>Hour of Day Start</h4>
+                            <label>Choose Hour of Day. Only values between 0 and 23 permitted.</label>
+                            <input
+                                style={{marginLeft:0, marginTop: 10}}
+                                id="amountInputEnd"
+                                type='number'
+                                onChange={(e) => setChosenStartHour(parseInt(e.target.value, 10))}
                                 value={chosenStartHour}
                             />
                         </Col>
@@ -157,7 +173,17 @@ const HeatMapScene = () => {
                                 style={{marginLeft:0, marginTop: 10}}
                                 id="amountInputEnd"
                                 type='number'
-                                onChange={(e) => setChosenEndHour(e.target.value)}
+                                onChange={(e) => setChosenEndDay(parseInt(e.target.value), 10)}
+                                value={chosenEndDay}
+                            />
+                            <hr></hr>
+                            <h4>Hour of Day End</h4>
+                            <label>Choose Hour of Day. Only values between 0 and 23 permitted.</label>
+                            <input
+                                style={{marginLeft:0, marginTop: 10}}
+                                id="amountInputEnd"
+                                type='number'
+                                onChange={(e) => setChosenEndHour(parseInt(e.target.value, 10))}
                                 value={chosenEndHour}
                             /></Col>
                             <Col></Col>
@@ -170,16 +196,6 @@ const HeatMapScene = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
-                    <p>{`StartDate: ${filterDate[1]}`}</p>
-                    <p>{`Start Hour of Day Filter: ${dayOfWeekFilter[0]}`}</p>
-                    <p>{`End Hour of Day Filter: ${dayOfWeekFilter[1]}`}</p>
-                    <p>{`${startDate}`}</p>
-                    <p>{`${endDate}`}</p>
-                    <p>{chosenStartHour}</p>
-                    <p>{chosenEndHour}</p>
-                    <p>.</p>
-                    <p>.</p>
             </Row>
 
         </Container>
