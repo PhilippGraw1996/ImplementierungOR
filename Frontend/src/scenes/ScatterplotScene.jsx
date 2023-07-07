@@ -162,16 +162,6 @@ const ScatterplotScene = () => {
                             </Row>
                         </Row>
                     </form>
-                    <p>{`StartDate: ${filterDate[0]}`}</p>
-                    <p>{`StartDate: ${filterDate[1]}`}</p>
-                    <p>{`Start Hour of Day Filter: ${dayOfWeekFilter[0]}`}</p>
-                    <p>{`End Hour of Day Filter: ${dayOfWeekFilter[1]}`}</p>
-                    <p>{`${startDate}`}</p>
-                    <p>{`${endDate}`}</p>
-                    <p>{chosenStartHour}</p>
-                    <p>{chosenEndHour}</p>
-                    <p>.</p>
-                    <p>.</p>
             </Row>
 
         </Container>
