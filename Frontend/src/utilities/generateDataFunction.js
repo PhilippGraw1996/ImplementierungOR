@@ -1,3 +1,6 @@
+
+
+// Generating Mock data
 const generateData = (count, yrange) => {
     var i = 0;
     var series = [];

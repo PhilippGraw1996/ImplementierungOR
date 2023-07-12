@@ -6,15 +6,11 @@ import Card from "react-bootstrap/Card";
 import {Link} from "react-router-dom";
 
 import pie from "../Images/PieChartFinal.jpg";
-import akkord from "../Images/AkkordDiagrammFinal.jpg";
 import bar from "../Images/BarChartFinal.jpg";
-import boxplot from "../Images/BoxPlotsFinal.jpg";
 import line from "../Images/LinienDiagrammFinal.jpg";
-import fluss from "../Images/FlussDiagrammFinal.jpg";
 import area from "../Images/AreaDaigrammFinal.jpg";
 import heatMap from "../Images/HeatMapFinal.jpg";
 import heatMapKarte from"../Images/HeatMapKarteFinal.jpg";
-import parallel from "../Images/ParallelLinesDiagrammFinal.jpg";
 import standOrtKarte from "../Images/StandOrtKarteFinal.jpg";
 
 
@@ -31,7 +27,7 @@ const SubKacheln = () => {
             "cardHeading": "Barcharts",
             "index": 3,
             "image": bar,
-            "DetailPageLink": "/barChart"
+            "DetailPageLink": "/barChartUp"
         }, {
             "shortText": "The linegraph's show the (aggregated) amount of scooter trips over the time.",
             "cardHeading": "Graphs",
@@ -68,6 +64,18 @@ const SubKacheln = () => {
             "index": 11,
             "image": area,
             "DetailPageLink": "/areaDiagram"
+        }, {
+            "shortText": "The scatterplots show the data points along to dimensions.",
+            "cardHeading": "Scatterplots",
+            "index": 12,
+            "image": area,
+            "DetailPageLink": "/scatterPlots"
+        }, {
+            "shortText": "The descriptive tables give a first overview over the data.",
+            "cardHeading": "Descriptive's",
+            "index": 13,
+            "image": area,
+            "DetailPageLink": "/descriptiveTables"
         }
     ]
 

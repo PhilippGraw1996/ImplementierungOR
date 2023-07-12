@@ -63,9 +63,9 @@ const HeatMapScene = () => {
                         height: 60
                         }}>
                     <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Heatmap Overview trip frequency Weekday/Hour</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Battery Deviation by Distance</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Trip frequency by weekday over time</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(1)}>Heatmap Overview trip frequency Weekday/Hour</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(2)}>Battery Deviation by Distance</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(3)}>Trip frequency by weekday over time</Button>
                     </Form>
 
             </Row>
@@ -191,7 +191,7 @@ const HeatMapScene = () => {
 
                             <Row style={{marginTop:10, marginBottom: 100}}>
                                 <Col>
-                                    <Button onClick={submitHandlerFilter} type="submit">Submit changes</Button>
+                                    <Button onClick={submitHandlerFilter} type="submit" style={{ background: "#0B8745", borderColor: "#0B8745"}}>Submit changes</Button>
                                 </Col>
                             </Row>
                         </Row>

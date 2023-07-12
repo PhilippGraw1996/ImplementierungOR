@@ -42,9 +42,9 @@ const MainDashboardScene = () => {
                         backgroundImage: BackgroundImage
                         }}>   <Button type="submit"
                                       onClick={() => setFilter(1)}
-                                      style={{background: "#26D477",
+                                      style={{background: "#9B3BD4",
                                       marginTop: "30px",
-                                      borderColor: "#26D477",
+                                      borderColor: "#9B3BD4",
                                       marginLeft: "85px"}}
                                     >Dashboard 1/4</Button>
                     </Col>
@@ -60,9 +60,9 @@ const MainDashboardScene = () => {
                         backgroundImage: BackgroundImage
                         }}>   <Button type="submit"
                                       onClick={() => setFilter(2)}
-                                      style={{background: "#26D477",
+                                      style={{background: "#9B3BD4",
                                               marginTop: "30px",
-                                              borderColor: "#26D477",
+                                              borderColor: "#9B3BD4",
                                               marginLeft: "85px"}}
                                     >Dashboard 2/4</Button>
                     </Col>
@@ -79,8 +79,8 @@ const MainDashboardScene = () => {
                         }}>      
                                     <Button type="submit"
                                         onClick={() => setFilter(3)}
-                                        style={{background: "#26D477",
-                                              borderColor: "#26D477",
+                                        style={{background: "#9B3BD4",
+                                              borderColor: "#9B3BD4",
                                               align: "center",
                                               marginTop: "30px",
                                               marginLeft: "85px"
@@ -100,8 +100,8 @@ const MainDashboardScene = () => {
                         backgroundImage: BackgroundImage
                         }}>   <Button type="submit"
                                       onClick={() => setFilter(4)}
-                                      style={{background: "#26D477",
-                                      borderColor: "#26D477",
+                                      style={{background: "#9B3BD4",
+                                      borderColor: "#9B3BD4",
                                       marginTop: "30px",
                                       marginLeft: "85px"}}
                                     >Dashboard 4/4</Button>

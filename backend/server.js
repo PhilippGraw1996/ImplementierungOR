@@ -16,6 +16,10 @@ app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
 })
+/*
+app.use(cors({
+    origin: 'http://localhost:3000'
+})); */
 
 // Routes
 app.use('/api/scooters', diagramRoutes);

@@ -10,6 +10,8 @@ import LeftSideBar from "./globalView/LeftSideBar";
 
 function App() {
   return (
+    // BrowserRouter enables dynamic page content based on the URL
+    // Header, Footer and LeftSiedeBar as global components displayed on every page of the application
     <BrowserRouter>
       <div className="min-vh-100">
           <Header style={{zIndex: "100"}}></Header>
@@ -21,3 +23,5 @@ function App() {
 }
 
 export default App;
+
+

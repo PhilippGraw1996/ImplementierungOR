@@ -1,5 +1,5 @@
 import React from 'react';
-import DescriptiveChartSDK from "../MongoDBChartComponents/MongoDBSDK/ChartSDK"
+import DescriptiveChartSDK from "../Frontend/src/MongoDBChartComponents/MongoDBSDK/ChartSDK"
 
 import {Row} from 'react-bootstrap';
 import Container from "react-bootstrap/Container";

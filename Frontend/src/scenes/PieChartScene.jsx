@@ -57,9 +57,9 @@ const PieChartScene = () => {
                         height: 60
                         }}>
                 <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Amount of Trips by Weekday</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Amount of Trips by Hour of Day</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Amount of Trips by Weekend (yes/no)</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(1)}>Amount of Trips by Weekday</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(2)}>Amount of Trips by Hour of Day</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(3)}>Amount of Trips by Weekend (yes/no)</Button>
                     </Form>
             </Row>
         { selection === 1 && <Row style={{marginTop: 10,
@@ -192,7 +192,7 @@ const PieChartScene = () => {
 
                             <Row style={{marginTop:10, marginBottom: 100}}>
                                 <Col>
-                                    <Button onClick={submitHandlerFilter} type="submit">Submit changes</Button>
+                                    <Button onClick={submitHandlerFilter} type="submit" style={{ background: "#0B8745", borderColor: "#0B8745"}}>Submit changes</Button>
                                 </Col>
                             </Row>
                         </Row>

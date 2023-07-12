@@ -62,9 +62,9 @@ const HeatMapScene = () => {
                         height: 60
                         }}>
                     <Form onSubmit={submitHandler}>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(1)}>Heatmap by start locations of trips</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(2)}>Heatmap by end locations of trips</Button>
-                        <Button style={{marginTop: 10, marginLeft: 5}} onClick={() => setSelection(3)}>Heatmaps by start and end locations: weekdays 07:00 am - 09:00 am</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(1)}>Heatmap by start locations of trips</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(2)}>Heatmap by end locations of trips</Button>
+                        <Button style={{marginTop: 10, marginLeft: 5, background: "#0B8745", borderColor: "#0B8745"}} onClick={() => setSelection(3)}>Heatmaps by start and end locations: weekdays 07:00 am - 09:00 am</Button>
                     </Form>
 
             </Row>
@@ -208,7 +208,7 @@ const HeatMapScene = () => {
 
                             <Row style={{marginTop:10, marginBottom: 100}}>
                                 <Col>
-                                    <Button onClick={submitHandlerFilter} type="submit">Submit changes</Button>
+                                    <Button onClick={submitHandlerFilter} type="submit" style={{ background: "#0B8745", borderColor: "#0B8745"}}>Submit changes</Button>
                                 </Col>
                             </Row>
                         </Row>

@@ -37,7 +37,7 @@ const QuerieResultsByScooter = () => {
 
     const [scooter, setScooter] = useState(null);
 
-
+// Use http://localhost:5050/.... if you want to run file with docker builds.... 
     useEffect(() => {
         const fetchScooters = async () => {
             const response = await fetch(`/api/scooters/descByCat/${category}/${amount}/${displayOrder}`);
@@ -52,9 +52,6 @@ const QuerieResultsByScooter = () => {
     }, [category, amount, displayOrder])
 
 /* --------------------------------------------------------------------------------*/
-
-
-
 
     return (
         <Container className="min-vh-100 pb-5" style={{marginTop: 100}}>
@@ -116,7 +113,7 @@ const QuerieResultsByScooter = () => {
 
                             <Row style={{marginTop:15, marginBottom: 100}}>
                                 <Col>
-                                    <Button onClick={submitHandlerFilter} type="submit">Submit changes</Button>
+                                    <Button onClick={submitHandlerFilter} type="submit" style={{background: "#0B8745", borderColor: "#0B8745"}}>Submit changes</Button>
                                 </Col>
                             </Row>
                         </Row>
