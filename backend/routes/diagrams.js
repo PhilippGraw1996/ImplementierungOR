@@ -12,16 +12,16 @@ const {
 } = require('../controllers/tripControllers');
 
 
-// GET all Scooter Trips
+// GET all Scooter Trips - Depricated, not used
 router.get('/', getAllTrips);
 
 // GET 5 Trips Sorted by Category Descending
 router.get('/descByCat/:category/:amount/:order', getDescendingTripsByCategory)
 
-// GET single Scooter Trips
+// GET single Scooter Trips - Depricated, not used
 router.get('/:id', getSingleTrip);
 
-// GET single Scooter Trips
+// GET single Scooter Trips - Depricated, not used
 router.get('/:code', getDescendingTripsByCode);
 
 

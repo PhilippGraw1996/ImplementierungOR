@@ -3,7 +3,7 @@ const Trips = require('../models/eScooterDataModel');
 const mongoose = require('mongoose');
 
 
-// Get all Trips
+// Get all Trips - Depricated, not used
 const getAllTrips = async (req, res) => {
     const allTrips = await Trips.find({}).sort({code: -1});
 
@@ -27,7 +27,7 @@ const getDescendingTripsByCategory = async(req, res) => {
 
 }
 
-// Get All Trips by Code
+// Get All Trips by Code - Depricated, not used
 const getDescendingTripsByCode = async(req, res) => {
     const scooterCode = req.params.code;
     console.log(scooterCode);
@@ -37,7 +37,7 @@ const getDescendingTripsByCode = async(req, res) => {
 }
 
 
-// Get a single Trip
+// Get a single Trip - Depricated, not used
 const getSingleTrip = async(req, res) => {
     const { id } = req.params;
     console.log(req.params);
@@ -54,7 +54,7 @@ const getSingleTrip = async(req, res) => {
 
 
 
-// Get all trips of 1 Scooter by ID
+// Get all trips of 1 Scooter by ID - Depricated, not used
 
 
 // *** AGGREGATION FUNCIONS ***

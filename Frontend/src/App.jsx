@@ -6,8 +6,6 @@ import Footer from "./globalView/Footer";
 import Header from './globalView/Header';
 import LeftSideBar from "./globalView/LeftSideBar";
 
-
-
 function App() {
   return (
     // BrowserRouter enables dynamic page content based on the URL
@@ -23,5 +21,3 @@ function App() {
 }
 
 export default App;
-
-

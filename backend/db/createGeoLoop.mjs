@@ -1,3 +1,5 @@
+// Deprecated, used MongoDB Shell instead
+
 import db from "./connection.mjs";
 
 db = db.getSiblingDB("test");

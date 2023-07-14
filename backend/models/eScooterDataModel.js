@@ -35,3 +35,11 @@ const eScooterSchema = new Schema({
 
 // Gives Name To the Collection in the DataBase
 module.exports = mongoose.model('EScooterBerlinFullSet', eScooterSchema, 'test');
+
+
+
+
+
+
+
+

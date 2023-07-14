@@ -58,8 +58,8 @@ const HomeBanner = () => {
                 <h2 style={{color: "white"}}>Goal of the Project</h2>
                 <h5 style={{color: "white"}}>
                   The goal of the project is to create a webbapplication that offers the necessary tools to analyse a dataset of
-                  roughly 600.000 e-Scooter strips in Berlin. The dataset contains trips in the time period of september 2019 until october 2020. 
-                  The dataset shows trips of 10.724 different e-Scooters. 
+                  577.813 E-Scooter strips in Berlin. The dataset contains trips in the time period of september 2019 until october 2020. 
+                  The dataset shows trips of 10.724 different E-Scooters. 
                   This website offers the necessary tools that are needed, to get a first visual overview over the dataset and furthemore offers necessary queries
                   to adjust the graphs and bars to retrieve the needed insides over the data.
                 </h5>
